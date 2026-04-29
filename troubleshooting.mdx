@@ -1,0 +1,181 @@
+---
+title: "Fix Common Toqui Issues: Picks, Pools, and Notifications"
+description: "Step-by-step fixes for the most common Toqui problems: joining pools, saving picks, leaderboard updates, push notifications, sign-in, and more."
+---
+
+Most issues with Toqui can be resolved quickly. Find your problem below and follow the steps. If nothing here helps, email [help@toqui.app](mailto:help@toqui.app) and include a description of what you were doing when the issue occurred.
+
+## Can't join a pool
+
+**Symptoms:** You enter a code or click an invite link and get an error, or the join button does nothing.
+
+**Common causes and fixes:**
+
+<Steps>
+  <Step title="Check the join code">
+    Join codes are exactly 8 characters long and case-sensitive. Make sure you've entered all 8 characters with no spaces before or after. Ask the organizer to resend the code if you're not sure it's correct.
+  </Step>
+  <Step title="Check whether the pool is full">
+    If the pool has reached its member cap, new members can't join until the organizer upgrades the pool to a higher tier. Contact the pool organizer and ask them to upgrade.
+  </Step>
+  <Step title="Check whether you're already a member">
+    If you've already joined the pool, clicking the invite link again will show an error. Open your pool list — you may already be in it.
+  </Step>
+  <Step title="Make sure you're signed in">
+    You must have a Toqui account and be signed in before joining. If you're not signed in, the join page will prompt you to sign up or log in first.
+  </Step>
+</Steps>
+
+<Note>
+  Invite links don't expire, but they stop working if the pool reaches its member cap. The organizer can unlock capacity by upgrading their plan.
+</Note>
+
+---
+
+## Picks not saving
+
+**Symptoms:** You submit a pick and the page shows an error, or the pick doesn't appear after you navigate away.
+
+<Steps>
+  <Step title="Check whether the deadline has passed">
+    Picks can't be entered or changed after the lock. In Casual mode, individual matches lock at kickoff. In Escalating and Cascading Bracket modes, all picks for a stage lock at the stage start. If the match or stage has locked, the pick input will be disabled.
+  </Step>
+  <Step title="Check your internet connection">
+    Picks are saved in real time to Toqui's servers. If your connection drops mid-submission, the save may fail silently. Check that you have a working connection, then reopen the picks page and try again.
+  </Step>
+  <Step title="Refresh the page">
+    Occasionally a stale page state can prevent saves. Reload the picks page and re-enter your prediction.
+  </Step>
+  <Step title="Try a different browser or device">
+    If the problem persists on one browser, try another modern browser (Chrome, Firefox, Safari, Edge) to rule out a browser-specific issue.
+  </Step>
+</Steps>
+
+<Warning>
+  There's no grace period after the deadline. If the lock has passed, the pick can't be entered. Enable push notifications to get a reminder before the next deadline.
+</Warning>
+
+---
+
+## Leaderboard not updating
+
+**Symptoms:** A match has finished but the scores and standings look stale.
+
+<Steps>
+  <Step title="Wait a moment">
+    Live score data flows to Toqui every 30 seconds during a match. In the first minute or two after the final whistle, the leaderboard may still be processing. Give it up to 60 seconds before investigating further.
+  </Step>
+  <Step title="Check your internet connection">
+    The leaderboard receives live updates from Toqui's servers. If your connection drops, updates stop arriving. Check your connection and reload the page to resume live updates.
+  </Step>
+  <Step title="Refresh the page">
+    A manual refresh will re-fetch the latest scores and re-establish the real-time connection. Use your browser's reload button or press `F5` / `Cmd+R`.
+  </Step>
+</Steps>
+
+<Note>
+  Live updates require an active browser session. If Toqui is open in a background tab that the browser has suspended, reload the tab to resume live updates.
+</Note>
+
+---
+
+## Not receiving push notifications
+
+**Symptoms:** You're missing pick-deadline reminders or goal alerts.
+
+<Steps>
+  <Step title="Check browser permission">
+    Open your browser settings and confirm notifications are allowed for toqui.app. In Chrome, go to **Settings → Privacy and security → Site settings → Notifications**. In Safari on macOS, go to **Safari → Settings → Websites → Notifications**.
+  </Step>
+  <Step title="Check OS-level notification settings">
+    Your operating system can block notifications for a specific browser even if the browser has granted permission. On iOS, go to **Settings → [your browser] → Notifications** and make sure they're enabled. On macOS, go to **System Settings → Notifications** and check your browser.
+  </Step>
+  <Step title="Install Toqui as a PWA on iOS">
+    Push notifications on iOS are only available when Toqui is installed to your Home Screen as a PWA and your iOS version is 16.4 or later. Opening toqui.app in a regular Safari tab is not enough — you must use **Share → Add to Home Screen** and launch the app from the icon. See [FAQ: How do I install Toqui as an app?](/faq#how-do-i-install-toqui-as-an-app-on-my-phone-or-desktop) for steps.
+  </Step>
+  <Step title="Re-enable notifications in Toqui">
+    In Toqui, open your account settings and navigate to **Notifications**. If notifications were previously denied, you may need to revoke and re-grant permission in the browser before Toqui can re-subscribe you.
+  </Step>
+</Steps>
+
+---
+
+## Can't create a pool
+
+**Symptoms:** The "Create a pool" button does nothing, or you see a validation error.
+
+<Steps>
+  <Step title="Make sure you're signed in">
+    You must be signed in to create a pool. If you're not, you'll be redirected to the sign-in page.
+  </Step>
+  <Step title="Check the pool name length">
+    Pool names must be between 3 and 50 characters. A name that's too short (e.g., a single letter) or too long will be rejected with a validation error. Adjust the name and try again.
+  </Step>
+  <Step title="Check your pool count">
+    Each account can be a member of or organizer for up to 50 pools at a time. If you've hit this limit, you'll need to leave or delete an existing pool before creating a new one.
+  </Step>
+</Steps>
+
+---
+
+## Forgot password / can't sign in
+
+**Symptoms:** Your password isn't working, or you don't remember which method you used to create your account.
+
+<Steps>
+  <Step title="Use the Forgot password link">
+    On the sign-in page, click **Forgot password?**. Enter the email address associated with your account and check your inbox for a reset link. Check your spam folder if it doesn't arrive within a few minutes.
+  </Step>
+  <Step title="Try signing in with Google or Facebook">
+    If you originally created your account by clicking **Continue with Google** or **Continue with Facebook**, you don't have a password — use the same social login button you used originally. Trying to sign in with an email and password won't work for social accounts.
+  </Step>
+  <Step title="Check you're using the right email address">
+    If you have more than one email address, try each one. The account is tied to whichever email was used at registration.
+  </Step>
+</Steps>
+
+<Note>
+  If you've tried all of the above and still can't access your account, email [help@toqui.app](mailto:help@toqui.app) with your name and the email address you think is on the account.
+</Note>
+
+---
+
+## Pool shows the wrong score
+
+**Symptoms:** A live match score in your pool looks incorrect or hasn't updated.
+
+<Steps>
+  <Step title="Wait for the next update cycle">
+    Live scores refresh every 30 seconds during an active match. A brief delay between the broadcast and what you see in Toqui is normal. Wait 30–60 seconds and check again.
+  </Step>
+  <Step title="Refresh the page">
+    If a score still looks wrong after a minute, do a manual page refresh. This forces the app to re-fetch the latest data from Toqui's servers.
+  </Step>
+  <Step title="Contact support if the error persists after the match">
+    If the final score shown in your pool is clearly wrong after the match has ended and the leaderboard has settled, email [help@toqui.app](mailto:help@toqui.app) with your pool name and the match in question. The support team can investigate and correct the data if needed.
+  </Step>
+</Steps>
+
+---
+
+## Invite link not working
+
+**Symptoms:** Clicking an invite link shows an error or a "pool not found" message.
+
+<Steps>
+  <Step title="Check whether the pool is full">
+    If the pool has reached its member cap, the invite link will show an error for new visitors. Contact the pool organizer — they can upgrade to a higher tier to reopen capacity.
+  </Step>
+  <Step title="Ask the organizer for a fresh link">
+    Invite links encode the pool's current status. If the organizer regenerated the pool's join code after sending the original link, the old link will no longer work. Ask them to send you a new one.
+  </Step>
+  <Step title="Make sure you're not already a member">
+    If you've already joined this pool, the invite link will fail. Open your pool list in Toqui — the pool may already be there.
+  </Step>
+</Steps>
+
+---
+
+<Note>
+  **Still stuck?** Email [help@toqui.app](mailto:help@toqui.app) with a description of the problem, your pool name (if relevant), and the device and browser you're using. The support team will get back to you.
+</Note>

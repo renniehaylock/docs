@@ -1,0 +1,82 @@
+{
+  "projectType": "saas",
+  "projectName": "Toqui",
+  "projectDescription": "A free web app for running private soccer prediction pools with real-time auto-scoring, live leaderboards, and smart notifications — built for friend groups, offices, and communities.",
+  "theme": "almond",
+  "primaryColor": "#1D7C45",
+  "lightColor": "#2EEA73",
+  "darkColor": "#062313",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guide",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "join-a-pool"
+            ]
+          },
+          {
+            "group": "Running a Pool",
+            "pages": [
+              "guides/create-pool",
+              "guides/invite-members",
+              "guides/scoring-modes",
+              "guides/bracket-pools",
+              "guides/notifications"
+            ]
+          },
+          {
+            "group": "Your Account",
+            "pages": [
+              "guides/profile",
+              "guides/push-notifications"
+            ]
+          },
+          {
+            "group": "Pricing & Plans",
+            "pages": [
+              "pricing/overview",
+              "pricing/upgrade",
+              "pricing/enterprise"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "faq",
+              "troubleshooting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Private picks — no one sees picks until the match deadline locks",
+    "Real-time auto-scoring — leaderboard updates seconds after final whistle",
+    "5 scoring modes: Casual, Classic, Escalating, Cascading Bracket, and Custom",
+    "Full elimination bracket with auto-advancing teams",
+    "Smart push notifications for pick deadlines and leaderboard changes",
+    "Invite via shareable link or join code — no account required to join",
+    "PWA installable — works on any device, no app store needed",
+    "Custom pool branding with logo and colors (Pro/Enterprise)",
+    "Department vs. department competitions (Pro)",
+    "Zero ads on all tiers"
+  ],
+  "publicApiSurface": [
+    "createPool(data) — create a new prediction pool",
+    "joinPool(poolId) — join a pool by ID",
+    "joinPoolByCode(code) — join a pool via 8-character invite code",
+    "lookupPoolByCode(code) — resolve a join code to a pool slug",
+    "submitPrediction / updatePrediction — submit or update a match pick before deadline",
+    "Pool scoring presets: casual, escalating, cascading-bracket",
+    "Scoring rules: exact-score, correct-outcome, correct-margin, total-goals, clean-sheet, close-score",
+    "Push notification subscription (Web Push API / VAPID)",
+    "Pool tiers: free (up to 25 members), pro (50–1000 members), enterprise (1000+)",
+    "Auth: Google OAuth, Facebook OAuth, email/password"
+  ]
+}

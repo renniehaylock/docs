@@ -1,0 +1,118 @@
+---
+title: "Notifications: Pick Reminders and Standings Alerts"
+description: "Toqui sends two kinds of push notifications — pick-deadline reminders and standings updates. How to enable them on iOS, Android, and desktop browsers."
+---
+
+Toqui sends two types of notifications: reminders before your picks lock, and alerts when your position in the standings changes meaningfully. Neither type requires you to check the app — they arrive on your device whether or not Toqui is open.
+
+Both notification types are optional and require browser permission. They're designed to be genuinely useful and not spammy. No marketing emails, no daily digests — just "your picks are about to lock" and "you just jumped to #3."
+
+## The two notification types
+
+<CardGroup cols={2}>
+  <Card title="Pick-deadline reminders" icon="clock">
+    Sent before your picks lock. Gives you time to submit or update before you lose the window.
+  </Card>
+  <Card title="Standings updates" icon="arrow-trend-up">
+    Triggered when you move up or down significantly on the leaderboard after results come in.
+  </Card>
+</CardGroup>
+
+### Pick-deadline reminders
+
+A reminder goes out when your pick window is closing — for example, "Picks lock in 2 hours." The timing of reminders depends on your pool's scoring mode:
+
+- **Casual mode:** one reminder per match, sent before each individual match kicks off.
+- **Escalating mode:** one reminder per stage, sent before the first match of each round begins.
+- **Cascading Bracket mode:** one reminder before the Round of 16 bracket deadline.
+
+### Standings updates
+
+When results come in and the leaderboard shifts, Toqui notifies you if your position changes by enough to matter — moving into the top 3, jumping several spots, or dropping after a bad round. Minor position changes don't trigger a notification.
+
+## How to enable notifications
+
+<Tabs>
+  <Tab title="First login">
+    When you first sign in to Toqui, your browser will ask for permission to send notifications. Click or tap **Allow** to turn them on.
+
+    If you dismissed that prompt, follow the steps for your device below.
+  </Tab>
+  <Tab title="Profile settings">
+    <Steps>
+      <Step title="Open your profile">
+        Tap your avatar in the top-right corner and select **Profile**.
+      </Step>
+      <Step title="Go to Notifications">
+        Select **Notifications** from the settings menu.
+      </Step>
+      <Step title="Enable push notifications">
+        Toggle on **Push notifications**. Your browser may prompt you for permission at this point if it hasn't already.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Note>
+  Push notifications require browser permission and must be enabled per device. If you use Toqui on your phone and your laptop, you'll need to enable notifications on each one separately.
+</Note>
+
+## Enabling notifications by device
+
+<Tabs>
+  <Tab title="iOS (Safari)">
+    <Steps>
+      <Step title="Install Toqui as a PWA">
+        Open [toqui.app](https://toqui.app) in Safari, tap the **Share** button, and select **Add to Home Screen**. Push notifications on iOS Safari require the app to be installed as a PWA.
+      </Step>
+      <Step title="Open from your home screen">
+        Launch Toqui from the icon on your home screen (not from Safari directly).
+      </Step>
+      <Step title="Allow notifications when prompted">
+        The first time you open the installed app, you'll be asked to allow notifications. Tap **Allow**.
+      </Step>
+      <Step title="Check system settings if needed">
+        If you didn't see the prompt, go to **Settings > Toqui > Notifications** and turn them on from there.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Android (Chrome)">
+    <Steps>
+      <Step title="Open toqui.app in Chrome">
+        Navigate to [toqui.app](https://toqui.app). Chrome may show a banner to **Add to Home Screen** — you can do that for easier access, but it's not required for notifications on Android.
+      </Step>
+      <Step title="Allow notifications when prompted">
+        Chrome will ask for notification permission when you first sign in. Tap **Allow**.
+      </Step>
+      <Step title="Re-enable if you blocked it">
+        If you tapped **Block**, go to **Chrome Settings > Site Settings > Notifications**, find toqui.app, and change the permission to **Allow**.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Desktop (Chrome / Edge / Firefox)">
+    <Steps>
+      <Step title="Click Allow in the browser prompt">
+        When you sign in, your browser will show a popup in the address bar asking whether to allow notifications from toqui.app. Click **Allow**.
+      </Step>
+      <Step title="Re-enable if you blocked it">
+        Look for the lock or info icon in the address bar, click it, find **Notifications**, and change it to **Allow**. Refresh the page.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I allowed notifications but I'm not receiving any">
+    Check that your device's system-level notification settings allow browser notifications. On iOS, go to **Settings > Notifications** and find Toqui (or Safari). On Android, check **Settings > Apps > Chrome > Notifications**. On desktop, check your OS notification settings.
+  </Accordion>
+  <Accordion title="Can I receive notifications for some pools but not others?">
+    Notification preferences apply at the account level, not per pool. If you enable notifications, you'll receive reminders for all your pools.
+  </Accordion>
+  <Accordion title="How long are notifications stored?">
+    Undelivered notifications expire after 90 days. If your device is offline for an extended period, older notifications won't be delivered when you reconnect.
+  </Accordion>
+</AccordionGroup>
+
+For a deeper look at how push notifications work across browsers and platforms, see the [push notifications guide](/guides/push-notifications).

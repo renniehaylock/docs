@@ -1,0 +1,82 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Toqui",
+  "theme": "mint",
+  "colors": {
+    "primary": "#1D7C45",
+    "light": "#2EEA73",
+    "dark": "#062313"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Start free",
+      "href": "https://toqui.app/register"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guide",
+        "groups": [
+          {
+            "group": "👋 Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "join-a-pool"
+            ]
+          },
+          {
+            "group": "⚽ Running a Pool",
+            "pages": [
+              "guides/create-pool",
+              "guides/invite-members",
+              "guides/scoring-modes",
+              "guides/bracket-pools",
+              "guides/notifications"
+            ]
+          },
+          {
+            "group": "Your Account",
+            "pages": [
+              "guides/profile",
+              "guides/push-notifications"
+            ]
+          },
+          {
+            "group": "Pricing & Plans",
+            "pages": [
+              "pricing/overview",
+              "pricing/upgrade",
+              "pricing/enterprise"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "faq",
+              "troubleshooting"
+            ]
+          }
+        ],
+        "hidden": true
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/toqui-light-bg-logo.png",
+    "dark": "/images/toqui-dark-bg-logo.png"
+  },
+  "background": {
+    "color": {
+      "light": "#F3F4F0",
+      "dark": "#062313"
+    }
+  },
+  "fonts": {
+    "family": "Hanken Grotesk"
+  },
+  "favicon": "/images/favicon.png",
+  "description": "Help center for Toqui.app"
+}
