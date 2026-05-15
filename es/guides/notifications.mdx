@@ -1,0 +1,118 @@
+---
+title: "Notificaciones: recordatorios de predicciones y alertas de la tabla"
+description: "Toqui envía dos tipos de notificaciones push — recordatorios de cierre de predicciones y avisos de cambios en la tabla. Cómo activarlas en iOS, Android y navegadores de escritorio."
+---
+
+Toqui envía dos tipos de notificaciones: recordatorios antes de que se cierren tus predicciones y avisos cuando tu posición en la tabla cambia de forma significativa. Ninguno de los dos requiere que abras la app — llegan a tu dispositivo aunque Toqui esté cerrado.
+
+Ambos tipos son opcionales y requieren permiso del navegador. Están diseñados para ser genuinamente útiles, no para hacer spam. Sin correos de marketing, sin resúmenes diarios — solo "tus predicciones están por cerrarse" y "acabas de saltar al puesto #3".
+
+## Los dos tipos de notificación
+
+<CardGroup cols={2}>
+  <Card title="Recordatorios de cierre de predicciones" icon="clock">
+    Se envían antes de que se cierren tus predicciones. Te dan tiempo para enviar o actualizar antes de perder la ventana.
+  </Card>
+  <Card title="Cambios en la tabla" icon="arrow-trend-up">
+    Se activan cuando subes o bajas significativamente en la tabla después de que llegan los resultados.
+  </Card>
+</CardGroup>
+
+### Recordatorios de cierre de predicciones
+
+Sale un recordatorio cuando tu ventana de predicción está por cerrarse — por ejemplo, "Las predicciones cierran en 2 horas". El momento de los recordatorios depende del modo de puntuación de tu Juego:
+
+- **Modo Casual:** un recordatorio por partido, enviado antes del inicio de cada partido.
+- **Modo Escalonado:** un recordatorio por etapa, enviado antes del primer partido de cada ronda.
+- **Modo Bracket en Cascada:** un recordatorio antes del plazo del bracket de octavos.
+
+### Cambios en la tabla
+
+Cuando llegan los resultados y la tabla se mueve, Toqui te avisa si tu posición cambia lo suficiente como para que importe — entrar al top 3, saltar varios puestos o caer después de una ronda mala. Los cambios menores no disparan notificación.
+
+## Cómo activar las notificaciones
+
+<Tabs>
+  <Tab title="Primer inicio de sesión">
+    Cuando inicies sesión en Toqui por primera vez, tu navegador pedirá permiso para enviar notificaciones. Haz clic o toca **Permitir** para activarlas.
+
+    Si rechazaste ese aviso, sigue los pasos para tu dispositivo abajo.
+  </Tab>
+  <Tab title="Configuración del perfil">
+    <Steps>
+      <Step title="Abre tu perfil">
+        Toca tu avatar en la esquina superior derecha y selecciona **Perfil**.
+      </Step>
+      <Step title="Ve a Notificaciones">
+        Selecciona **Notificaciones** del menú de configuración.
+      </Step>
+      <Step title="Activa las notificaciones push">
+        Activa el interruptor de **Notificaciones push**. Es posible que el navegador te pida permiso en este momento si no lo había hecho antes.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Note>
+  Las notificaciones push requieren permiso del navegador y deben activarse por dispositivo. Si usas Toqui en tu celular y en tu laptop, deberás activarlas en cada uno por separado.
+</Note>
+
+## Activar notificaciones por dispositivo
+
+<Tabs>
+  <Tab title="iOS (Safari)">
+    <Steps>
+      <Step title="Instala Toqui como PWA">
+        Abre [toqui.app](https://toqui.app) en Safari, toca el botón **Compartir** y selecciona **Agregar a la pantalla de inicio**. Las notificaciones push en iOS Safari requieren que la app esté instalada como PWA.
+      </Step>
+      <Step title="Ábrela desde tu pantalla de inicio">
+        Inicia Toqui desde el ícono en tu pantalla de inicio (no desde Safari directamente).
+      </Step>
+      <Step title="Permite las notificaciones cuando se solicite">
+        La primera vez que abras la app instalada, te pedirá permitir notificaciones. Toca **Permitir**.
+      </Step>
+      <Step title="Revisa la configuración del sistema si hace falta">
+        Si no viste el aviso, ve a **Ajustes > Toqui > Notificaciones** y actívalas desde ahí.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Android (Chrome)">
+    <Steps>
+      <Step title="Abre toqui.app en Chrome">
+        Ve a [toqui.app](https://toqui.app). Es posible que Chrome muestre un banner para **Agregar a la pantalla de inicio** — puedes hacerlo para un acceso más fácil, pero no es necesario para las notificaciones en Android.
+      </Step>
+      <Step title="Permite las notificaciones cuando se solicite">
+        Chrome te pedirá permiso de notificación cuando inicies sesión por primera vez. Toca **Permitir**.
+      </Step>
+      <Step title="Reactívalas si las bloqueaste">
+        Si tocaste **Bloquear**, ve a **Configuración de Chrome > Configuración del sitio > Notificaciones**, busca toqui.app y cambia el permiso a **Permitir**.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Escritorio (Chrome / Edge / Firefox)">
+    <Steps>
+      <Step title="Haz clic en Permitir en el aviso del navegador">
+        Cuando inicies sesión, tu navegador mostrará un popup en la barra de direcciones preguntando si permites las notificaciones de toqui.app. Haz clic en **Permitir**.
+      </Step>
+      <Step title="Reactívalas si las bloqueaste">
+        Busca el ícono de candado o información en la barra de direcciones, haz clic, busca **Notificaciones** y cámbialo a **Permitir**. Recarga la página.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Solución de problemas
+
+<AccordionGroup>
+  <Accordion title="Permití las notificaciones pero no recibo ninguna">
+    Verifica que la configuración del sistema de tu dispositivo permita las notificaciones del navegador. En iOS, ve a **Ajustes > Notificaciones** y busca Toqui (o Safari). En Android, revisa **Configuración > Aplicaciones > Chrome > Notificaciones**. En escritorio, revisa la configuración de notificaciones de tu SO.
+  </Accordion>
+  <Accordion title="¿Puedo recibir notificaciones de algunos Juegos pero no de otros?">
+    Las preferencias de notificación se aplican a nivel de cuenta, no por Juego. Si las activas, recibirás recordatorios de todos tus Juegos.
+  </Accordion>
+  <Accordion title="¿Cuánto tiempo se guardan las notificaciones?">
+    Las notificaciones no entregadas expiran después de 90 días. Si tu dispositivo está desconectado por mucho tiempo, las notificaciones más viejas no se entregarán cuando vuelvas a conectarte.
+  </Accordion>
+</AccordionGroup>
+
+Para una mirada más profunda a cómo funcionan las notificaciones push en distintos navegadores y plataformas, mira la [guía de notificaciones push](/es/guides/push-notifications).

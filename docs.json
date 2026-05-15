@@ -14,54 +14,131 @@
       "href": "https://toqui.app/register"
     }
   },
+  "redirects": [
+    { "source": "/", "destination": "/en" },
+    { "source": "/introduction", "destination": "/en/introduction" },
+    { "source": "/quickstart", "destination": "/en/quickstart" },
+    { "source": "/join-a-pool", "destination": "/en/join-a-pool" },
+    { "source": "/faq", "destination": "/en/faq" },
+    { "source": "/troubleshooting", "destination": "/en/troubleshooting" },
+    { "source": "/guides/create-pool", "destination": "/en/guides/create-pool" },
+    { "source": "/guides/invite-members", "destination": "/en/guides/invite-members" },
+    { "source": "/guides/scoring-modes", "destination": "/en/guides/scoring-modes" },
+    { "source": "/guides/bracket-pools", "destination": "/en/guides/bracket-pools" },
+    { "source": "/guides/tiebreakers", "destination": "/en/guides/tiebreakers" },
+    { "source": "/guides/notifications", "destination": "/en/guides/notifications" },
+    { "source": "/guides/profile", "destination": "/en/guides/profile" },
+    { "source": "/guides/push-notifications", "destination": "/en/guides/push-notifications" },
+    { "source": "/pricing/overview", "destination": "/en/pricing/overview" },
+    { "source": "/pricing/upgrade", "destination": "/en/pricing/upgrade" },
+    { "source": "/pricing/enterprise", "destination": "/en/pricing/enterprise" }
+  ],
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Guide",
-        "groups": [
+        "language": "en",
+        "default": true,
+        "tabs": [
           {
-            "group": "👋 Get Started",
-            "pages": [
-              "introduction",
-              "quickstart",
-              "join-a-pool"
-            ]
-          },
-          {
-            "group": "⚽ Running a Pool",
-            "pages": [
-              "guides/create-pool",
-              "guides/invite-members",
-              "guides/scoring-modes",
-              "guides/bracket-pools",
-              "guides/tiebreakers",
-              "guides/notifications"
-            ]
-          },
-          {
-            "group": "Your Account",
-            "pages": [
-              "guides/profile",
-              "guides/push-notifications"
-            ]
-          },
-          {
-            "group": "Pricing & Plans",
-            "pages": [
-              "pricing/overview",
-              "pricing/upgrade",
-              "pricing/enterprise"
-            ]
-          },
-          {
-            "group": "Help",
-            "pages": [
-              "faq",
-              "troubleshooting"
-            ]
+            "tab": "Guide",
+            "groups": [
+              {
+                "group": "👋 Get Started",
+                "pages": [
+                  "en/introduction",
+                  "en/quickstart",
+                  "en/join-a-pool"
+                ]
+              },
+              {
+                "group": "⚽ Running a Pool",
+                "pages": [
+                  "en/guides/create-pool",
+                  "en/guides/invite-members",
+                  "en/guides/scoring-modes",
+                  "en/guides/bracket-pools",
+                  "en/guides/tiebreakers",
+                  "en/guides/notifications"
+                ]
+              },
+              {
+                "group": "Your Account",
+                "pages": [
+                  "en/guides/profile",
+                  "en/guides/push-notifications"
+                ]
+              },
+              {
+                "group": "Pricing & Plans",
+                "pages": [
+                  "en/pricing/overview",
+                  "en/pricing/upgrade",
+                  "en/pricing/enterprise"
+                ]
+              },
+              {
+                "group": "Help",
+                "pages": [
+                  "en/faq",
+                  "en/troubleshooting"
+                ]
+              }
+            ],
+            "hidden": true
           }
-        ],
-        "hidden": true
+        ]
+      },
+      {
+        "language": "es",
+        "tabs": [
+          {
+            "tab": "Guía",
+            "groups": [
+              {
+                "group": "👋 Empezar",
+                "pages": [
+                  "es/introduction",
+                  "es/quickstart",
+                  "es/join-a-pool"
+                ]
+              },
+              {
+                "group": "⚽ Administrar un Juego",
+                "pages": [
+                  "es/guides/create-pool",
+                  "es/guides/invite-members",
+                  "es/guides/scoring-modes",
+                  "es/guides/bracket-pools",
+                  "es/guides/tiebreakers",
+                  "es/guides/notifications"
+                ]
+              },
+              {
+                "group": "Tu Cuenta",
+                "pages": [
+                  "es/guides/profile",
+                  "es/guides/push-notifications"
+                ]
+              },
+              {
+                "group": "Precios y Planes",
+                "pages": [
+                  "es/pricing/overview",
+                  "es/pricing/upgrade",
+                  "es/pricing/enterprise"
+                ]
+              },
+              {
+                "group": "Ayuda",
+                "pages": [
+                  "es/faq",
+                  "es/troubleshooting"
+                ]
+              }
+            ],
+            "hidden": true
+          }
+        ]
       }
     ]
   },

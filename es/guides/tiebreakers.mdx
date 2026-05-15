@@ -1,0 +1,49 @@
+---
+title: "Desempates: cómo Toqui resuelve puntajes iguales en la tabla"
+description: "Cómo Toqui rompe empates en la tabla del Juego — una cascada de cuatro niveles desde el total de puntos hasta los marcadores exactos, la precisión en la diferencia de goles y el tiempo promedio de envío."
+---
+
+Cuando dos o más participantes terminan un torneo con el mismo total de puntos, Toqui resuelve el empate con una cascada de cuatro niveles. Cada nivel solo se evalúa si el anterior aún resulta en empate, por lo que la mayoría de los empates se resuelven en el Nivel 2 sin llegar a los criterios siguientes.
+
+<Note>
+  Los desempates se aplican automáticamente a todos los Juegos sin importar el modo de puntuación. No hay nada que configurar — las reglas de abajo son las mismas para los Juegos Casual, Escalonado, Bracket en Cascada y Personalizado.
+</Note>
+
+## Los cuatro niveles
+
+<Steps>
+  <Step title="Nivel 1 — Total de puntos">
+    El participante con el mayor total de puntos queda más arriba. Este es el criterio principal de clasificación y resuelve la gran mayoría de las posiciones.
+  </Step>
+
+  <Step title="Nivel 2 — Conteo de marcadores exactos">
+    Si sigue habiendo empate, el participante con el mayor número de marcadores exactos predichos (un marcador final correctamente predicho) queda más arriba. Esto premia la precisión a lo largo del torneo.
+  </Step>
+
+  <Step title="Nivel 3 — Precisión en la diferencia de goles">
+    Si sigue habiendo empate, Toqui compara qué tan cerca estuvo la diferencia de goles predicha de cada participante respecto a la diferencia real en todos los partidos. Cuanto menor sea el error acumulado, más arriba queda.
+
+    Por ejemplo, si el resultado real es 3–1 (diferencia de goles de 2) y predijiste 2–1 (diferencia de goles de 1), tu error para ese partido es 1. Estos errores se suman a lo largo de todos los partidos que predijiste.
+  </Step>
+
+  <Step title="Nivel 4 — Tiempo promedio de predicción">
+    Si sigue habiendo empate, el participante que envió sus predicciones más temprano en promedio queda más arriba. Esto premia a quienes se comprometen con sus predicciones antes en lugar de esperar al último momento.
+  </Step>
+</Steps>
+
+## Referencia rápida
+
+| Nivel | Criterio | La posición más alta es para… |
+|---|---|---|
+| 1 | Total de puntos | Más puntos |
+| 2 | Conteo de marcadores exactos | Más marcadores exactos |
+| 3 | Precisión en la diferencia de goles | Menor error acumulado |
+| 4 | Tiempo promedio de predicción | Envíos más tempranos |
+
+## Empate total
+
+En el raro caso de que dos participantes empaten en los cuatro criterios, comparten la misma posición en la tabla.
+
+<Tip>
+  Enviar tus predicciones temprano no solo es una ventaja para el desempate — también te protege de no perderte un cierre. Mira [Modos de puntuación](/es/guides/scoring-modes) para saber cómo y cuándo se cierran las predicciones en cada modo.
+</Tip>
