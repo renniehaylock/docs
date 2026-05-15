@@ -1,0 +1,49 @@
+---
+title: "Tiebreakers: How Toqui Resolves Equal Scores in the Standings"
+description: "How Toqui breaks ties in pool standings — a four-tier cascade from total points to exact scores, goal difference accuracy, and average prediction time."
+---
+
+When two or more participants finish a tournament with the same total points, Toqui resolves the tie using a four-tier cascade. Each tier is only evaluated if the previous one still results in a tie, so most ties are broken at Tier 2 without ever reaching the later criteria.
+
+<Note>
+  Tiebreakers apply automatically to every pool regardless of scoring mode. There's nothing to configure — the rules below are the same for Casual, Escalating, Cascading Bracket, and Custom pools.
+</Note>
+
+## The four tiers
+
+<Steps>
+  <Step title="Tier 1 — Total points">
+    The participant with the highest total points ranks higher. This is the primary ranking criterion and resolves the vast majority of standings.
+  </Step>
+
+  <Step title="Tier 2 — Exact score count">
+    If still tied, the participant with the greater number of exact score predictions (a correctly predicted final score) ranks higher. This rewards precision over the course of the tournament.
+  </Step>
+
+  <Step title="Tier 3 — Goal difference accuracy">
+    If still tied, Toqui compares how close each participant's predicted goal difference was to the actual goal difference across all matches. The lower the cumulative error, the higher the rank.
+
+    For example, if the actual result is 3–1 (goal difference of 2) and you predicted 2–1 (goal difference of 1), your error for that match is 1. These errors are summed across every match you predicted.
+  </Step>
+
+  <Step title="Tier 4 — Average prediction time">
+    If still tied, the participant who submitted their predictions earlier on average ranks higher. This rewards users who commit to their picks sooner rather than waiting until just before kickoff.
+  </Step>
+</Steps>
+
+## Quick reference
+
+| Tier | Criterion | Higher rank goes to… |
+|---|---|---|
+| 1 | Total points | More points |
+| 2 | Exact score count | More exact scores |
+| 3 | Goal difference accuracy | Lower cumulative error |
+| 4 | Average prediction time | Earlier submissions |
+
+## Full tie
+
+In the rare case that two participants are tied across all four criteria, they share the same position in the standings.
+
+<Tip>
+  Submitting picks early isn't just a tiebreaker advantage — it also protects you from missing a lock deadline. See [Scoring modes](/guides/scoring-modes) for how and when picks lock in each mode.
+</Tip>
