@@ -1,0 +1,181 @@
+---
+title: "Resolver problemas comunes de Toqui: predicciones, Juegos y notificaciones"
+description: "Soluciones paso a paso para los problemas más comunes de Toqui: unirse a Juegos, guardar predicciones, actualizaciones de la tabla, notificaciones push, inicio de sesión y más."
+---
+
+La mayoría de los problemas con Toqui se resuelven rápido. Encuentra el tuyo abajo y sigue los pasos. Si nada aquí te ayuda, escribe a [help@toqui.app](mailto:help@toqui.app) e incluye una descripción de lo que estabas haciendo cuando ocurrió el problema.
+
+## No puedes unirte a un Juego
+
+**Síntomas:** ingresas un código o haces clic en un enlace de invitación y recibes un error, o el botón de unirse no hace nada.
+
+**Causas comunes y soluciones:**
+
+<Steps>
+  <Step title="Revisa el código de invitación">
+    Los códigos de invitación tienen exactamente 8 caracteres y distinguen entre mayúsculas y minúsculas. Asegúrate de haber ingresado los 8 caracteres sin espacios al inicio o al final. Pídele al organizador que reenvíe el código si no estás seguro de que sea correcto.
+  </Step>
+  <Step title="Revisa si el Juego está lleno">
+    Si el Juego alcanzó su tope de miembros, los nuevos miembros no pueden unirse hasta que el organizador mejore el Juego a un plan superior. Contacta al organizador del Juego y pídele que mejore el plan.
+  </Step>
+  <Step title="Revisa si ya eres miembro">
+    Si ya te uniste al Juego, hacer clic de nuevo en el enlace de invitación mostrará un error. Abre tu lista de Juegos — quizás ya estés adentro.
+  </Step>
+  <Step title="Asegúrate de haber iniciado sesión">
+    Debes tener una cuenta de Toqui y haber iniciado sesión antes de unirte. Si no, la página de unirse te pedirá registrarte o iniciar sesión primero.
+  </Step>
+</Steps>
+
+<Note>
+  Los enlaces de invitación no caducan, pero dejan de funcionar si el Juego alcanza su tope de miembros. El organizador puede abrir capacidad mejorando su plan.
+</Note>
+
+---
+
+## Las predicciones no se guardan
+
+**Síntomas:** envías una predicción y la página muestra un error, o la predicción no aparece después de salir.
+
+<Steps>
+  <Step title="Revisa si pasó el plazo">
+    Las predicciones no se pueden ingresar ni cambiar después del cierre. En modo Casual, los partidos individuales se cierran al inicio. En modo Escalonado y Bracket en Cascada, todas las predicciones de una etapa cierran al inicio de la etapa. Si el partido o la etapa están cerrados, el campo de predicción estará deshabilitado.
+  </Step>
+  <Step title="Revisa tu conexión a internet">
+    Las predicciones se guardan en tiempo real en los servidores de Toqui. Si tu conexión se cae a mitad del envío, el guardado puede fallar sin aviso. Verifica que tengas conexión, vuelve a abrir la página de predicciones e intenta de nuevo.
+  </Step>
+  <Step title="Refresca la página">
+    A veces un estado obsoleto de la página puede impedir guardar. Recarga la página de predicciones y vuelve a ingresar tu predicción.
+  </Step>
+  <Step title="Prueba con otro navegador o dispositivo">
+    Si el problema persiste en un navegador, prueba con otro moderno (Chrome, Firefox, Safari, Edge) para descartar un problema específico de navegador.
+  </Step>
+</Steps>
+
+<Warning>
+  No hay periodo de gracia después del plazo. Si el cierre ya pasó, la predicción no se puede ingresar. Activa las notificaciones push para recibir un recordatorio antes del próximo plazo.
+</Warning>
+
+---
+
+## La tabla no se actualiza
+
+**Síntomas:** un partido terminó pero los puntajes y la tabla se ven obsoletos.
+
+<Steps>
+  <Step title="Espera un momento">
+    Los datos en vivo llegan a Toqui cada 30 segundos durante un partido. En el primer minuto o dos después del pitazo final, la tabla puede seguir procesando. Dale hasta 60 segundos antes de investigar más.
+  </Step>
+  <Step title="Revisa tu conexión a internet">
+    La tabla recibe actualizaciones en vivo de los servidores de Toqui. Si tu conexión se cae, las actualizaciones dejan de llegar. Revisa tu conexión y recarga la página para reanudar las actualizaciones en vivo.
+  </Step>
+  <Step title="Refresca la página">
+    Una recarga manual volverá a buscar los puntajes más recientes y restablecerá la conexión en tiempo real. Usa el botón de recargar de tu navegador o presiona `F5` / `Cmd+R`.
+  </Step>
+</Steps>
+
+<Note>
+  Las actualizaciones en vivo requieren una sesión activa del navegador. Si Toqui está abierto en una pestaña de fondo que el navegador suspendió, recarga la pestaña para reanudar las actualizaciones en vivo.
+</Note>
+
+---
+
+## No recibes notificaciones push
+
+**Síntomas:** se te están pasando los recordatorios de plazos o las alertas de gol.
+
+<Steps>
+  <Step title="Revisa el permiso del navegador">
+    Abre la configuración de tu navegador y confirma que las notificaciones estén permitidas para toqui.app. En Chrome, ve a **Configuración → Privacidad y seguridad → Configuración del sitio → Notificaciones**. En Safari en macOS, ve a **Safari → Configuración → Sitios web → Notificaciones**.
+  </Step>
+  <Step title="Revisa la configuración de notificaciones del SO">
+    Tu sistema operativo puede bloquear notificaciones para un navegador específico aunque el navegador haya otorgado permiso. En iOS, ve a **Ajustes → [tu navegador] → Notificaciones** y asegúrate de que estén activadas. En macOS, ve a **Configuración del sistema → Notificaciones** y revisa tu navegador.
+  </Step>
+  <Step title="Instala Toqui como PWA en iOS">
+    Las notificaciones push en iOS solo están disponibles cuando Toqui está instalado en la pantalla de inicio como PWA y tu versión de iOS es 16.4 o posterior. Abrir toqui.app en una pestaña normal de Safari no alcanza — tienes que usar **Compartir → Agregar a la pantalla de inicio** e iniciar la app desde el ícono. Mira [Preguntas frecuentes: ¿Cómo instalo Toqui como app?](/es/faq#como-instalo-toqui-como-app-en-mi-celular-o-escritorio) para los pasos.
+  </Step>
+  <Step title="Vuelve a activar las notificaciones en Toqui">
+    En Toqui, abre la configuración de tu cuenta y ve a **Notificaciones**. Si previamente se denegaron, quizás necesites revocar y volver a otorgar el permiso en el navegador antes de que Toqui pueda volver a suscribirte.
+  </Step>
+</Steps>
+
+---
+
+## No puedes crear un Juego
+
+**Síntomas:** el botón "Crear Juego" no hace nada, o ves un error de validación.
+
+<Steps>
+  <Step title="Asegúrate de haber iniciado sesión">
+    Debes haber iniciado sesión para crear un Juego. Si no, te redirige a la página de inicio de sesión.
+  </Step>
+  <Step title="Revisa la longitud del nombre del Juego">
+    Los nombres del Juego deben tener entre 3 y 50 caracteres. Un nombre demasiado corto (p. ej., una sola letra) o demasiado largo será rechazado con un error de validación. Ajusta el nombre e intenta de nuevo.
+  </Step>
+  <Step title="Revisa tu cantidad de Juegos">
+    Cada cuenta puede ser miembro u organizador de hasta 50 Juegos a la vez. Si llegaste a ese límite, tendrás que dejar o eliminar un Juego existente antes de crear uno nuevo.
+  </Step>
+</Steps>
+
+---
+
+## Olvidaste tu contraseña / no puedes iniciar sesión
+
+**Síntomas:** tu contraseña no funciona, o no recuerdas qué método usaste para crear tu cuenta.
+
+<Steps>
+  <Step title="Usa el enlace ¿Olvidaste tu contraseña?">
+    En la página de inicio de sesión, haz clic en **¿Olvidaste tu contraseña?**. Ingresa el correo asociado a tu cuenta y revisa tu bandeja de entrada para encontrar un enlace de restablecimiento. Revisa la carpeta de spam si no llega en unos minutos.
+  </Step>
+  <Step title="Intenta iniciar sesión con Google o Facebook">
+    Si originalmente creaste tu cuenta haciendo clic en **Continuar con Google** o **Continuar con Facebook**, no tienes contraseña — usa el mismo botón de inicio de sesión social que usaste originalmente. Intentar iniciar sesión con correo y contraseña no funcionará para cuentas sociales.
+  </Step>
+  <Step title="Verifica que estés usando el correo correcto">
+    Si tienes más de un correo, prueba con cada uno. La cuenta está atada al correo que se usó al registrarse.
+  </Step>
+</Steps>
+
+<Note>
+  Si probaste todo lo anterior y aún no puedes acceder a tu cuenta, escribe a [help@toqui.app](mailto:help@toqui.app) con tu nombre y el correo que crees que está en la cuenta.
+</Note>
+
+---
+
+## El Juego muestra un puntaje incorrecto
+
+**Síntomas:** un puntaje de un partido en vivo en tu Juego se ve incorrecto o no se ha actualizado.
+
+<Steps>
+  <Step title="Espera al siguiente ciclo de actualización">
+    Los puntajes en vivo se actualizan cada 30 segundos durante un partido activo. Un breve retraso entre la transmisión y lo que ves en Toqui es normal. Espera 30 a 60 segundos y revisa de nuevo.
+  </Step>
+  <Step title="Refresca la página">
+    Si un puntaje sigue mal después de un minuto, haz una recarga manual de la página. Esto fuerza a la app a buscar los datos más recientes de los servidores de Toqui.
+  </Step>
+  <Step title="Contacta a soporte si el error persiste después del partido">
+    Si el marcador final que se muestra en tu Juego es claramente incorrecto después de que el partido terminó y la tabla ya se calculó, escribe a [help@toqui.app](mailto:help@toqui.app) con el nombre de tu Juego y el partido en cuestión. El equipo de soporte puede investigar y corregir los datos si hace falta.
+  </Step>
+</Steps>
+
+---
+
+## El enlace de invitación no funciona
+
+**Síntomas:** hacer clic en el enlace muestra un error o un mensaje de "Juego no encontrado".
+
+<Steps>
+  <Step title="Revisa si el Juego está lleno">
+    Si el Juego alcanzó su tope de miembros, el enlace de invitación mostrará un error para nuevos visitantes. Contacta al organizador — puede mejorar a un plan superior para reabrir capacidad.
+  </Step>
+  <Step title="Pídele al organizador un enlace nuevo">
+    Los enlaces de invitación codifican el estado actual del Juego. Si el organizador regeneró el código del Juego después de enviar el enlace original, el viejo ya no funciona. Pídele que te mande uno nuevo.
+  </Step>
+  <Step title="Asegúrate de no ser ya miembro">
+    Si ya te uniste a este Juego, el enlace fallará. Abre tu lista de Juegos en Toqui — quizás el Juego ya esté ahí.
+  </Step>
+</Steps>
+
+---
+
+<Note>
+  **¿Sigues atascado?** Escribe a [help@toqui.app](mailto:help@toqui.app) con una descripción del problema, el nombre de tu Juego (si aplica) y el dispositivo y navegador que usas. El equipo de soporte te responderá.
+</Note>
