@@ -1,0 +1,72 @@
+---
+title: "Exporta los datos de tu Juego a CSV"
+description: "Descarga todas las predicciones de tu Juego como CSV — una fila por predicción, con detalles del partido, marcadores predichos vs. reales, hora de envío y desglose de puntos por regla."
+---
+
+La exportación CSV de Toqui te da el panorama completo de tu Juego: cada predicción de cada miembro, con los detalles del partido, marcadores predichos y reales, hora de envío y el desglose de puntos por regla. Es la herramienta detrás de todo lo que no puedes ver directamente en la tabla — premios separados para la fase de grupos y la eliminatoria, tablas personalizadas, auditorías de miembros y archivo histórico.
+
+<Note>
+  La exportación refleja el estado actual del Juego en el momento en que la descargas. Vuelve a exportar cuando necesites una foto actualizada.
+</Note>
+
+## Cómo acceder a la exportación
+
+Solo los organizadores del Juego pueden exportar. Desde el panel de tu Juego, abre la vista **Gestionar miembros** y haz clic en **Exportar CSV** — la descarga empieza al instante.
+
+## Qué incluye la exportación
+
+La exportación es un único CSV con una fila por predicción. Un Juego con 50 miembros y un torneo de 64 partidos genera aproximadamente 50 × 64 = 3.200 filas.
+
+| Columna | Descripción |
+|---|---|
+| `member_id` | Identificador estable del miembro del Juego |
+| `email` | Correo del miembro |
+| `stage` | Etapa del torneo (p. ej. fase de grupos, octavos, cuartos) |
+| `game_id` | Identificador estable del partido |
+| `home_team` | Nombre del equipo local |
+| `away_team` | Nombre del equipo visitante |
+| `kickoff_at` | Marca de tiempo del inicio del partido |
+| `predicted_home_score` | Marcador local predicho por el miembro |
+| `predicted_away_score` | Marcador visitante predicho por el miembro |
+| `actual_home_score` | Marcador final local (vacío en partidos aún no jugados) |
+| `actual_away_score` | Marcador final visitante (vacío en partidos aún no jugados) |
+| `submitted_at` | Cuándo el miembro envió (o editó por última vez) la predicción |
+| `pts_exact_score` | Puntos ganados por acertar el marcador exacto |
+| `pts_correct_outcome` | Puntos ganados por acertar el resultado |
+| `pts_correct_margin` | Puntos ganados por acertar la diferencia de goles |
+| `pts_total_goals` | Puntos ganados por acertar el total de goles |
+| `pts_clean_sheet` | Puntos ganados por predecir correctamente un arco en cero |
+| `pts_close_score` | Puntos ganados por quedar a un gol de cada lado |
+| `pts_total` | Puntos totales por esta predicción (suma de las columnas `pts_` anteriores) |
+
+<Tip>
+  Las reglas de puntuación se suman — la columna `pts_total` es simplemente la suma de las columnas por regla. Mira la pregunta del FAQ sobre la suma de reglas si quieres ver un ejemplo.
+</Tip>
+
+## Usos comunes
+
+<AccordionGroup>
+  <Accordion title="Dar premios separados por etapa (fase de grupos, eliminatoria, combinada)">
+    La tabla nativa de Toqui cubre todo el torneo. Para rankear miembros en una sola etapa:
+
+    1. Abre el CSV en Google Sheets o Excel.
+    2. Filtra la columna `stage` por la etapa que te interese — por ejemplo, solo partidos de fase de grupos.
+    3. Suma `pts_total` por `member_id` (o `email`) usando una tabla dinámica o `SUMAR.SI`.
+    4. Ordena descendiente para obtener la tabla de esa etapa.
+
+    Repite con otro filtro para producir la tabla de la fase eliminatoria. El premio al "mejor combinado" es la tabla estándar de Toqui — no hace falta exportar nada.
+  </Accordion>
+
+  <Accordion title="Auditar la actividad de los miembros">
+    La columna `email` te permite detectar cuentas duplicadas o sospechosas. Toqui ya bloquea que el mismo correo se una dos veces, así que para la mayoría de los Juegos esto es más bien una revisión rápida que moderación activa. Combínalo con la vista **Gestionar miembros** del panel para una gestión completa de miembros.
+  </Accordion>
+
+  <Accordion title="Archivar tu Juego después del torneo">
+    Una vez que termina el torneo, exportar el CSV te deja un registro permanente de todas las predicciones y resultados — útil para Juegos comunitarios que se repiten cada año o para compartir resultados detallados con patrocinadores.
+  </Accordion>
+</AccordionGroup>
+
+## Relacionado
+
+- [Desempates](/es/guides/tiebreakers) — cómo la tabla nativa de Toqui resuelve los empates.
+- [Modos de puntuación](/es/guides/scoring-modes) — las reglas que producen las columnas `pts_*`.

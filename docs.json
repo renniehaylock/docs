@@ -26,6 +26,7 @@
     { "source": "/guides/scoring-modes", "destination": "/en/guides/scoring-modes" },
     { "source": "/guides/bracket-pools", "destination": "/en/guides/bracket-pools" },
     { "source": "/guides/tiebreakers", "destination": "/en/guides/tiebreakers" },
+    { "source": "/guides/exports", "destination": "/en/guides/exports" },
     { "source": "/guides/notifications", "destination": "/en/guides/notifications" },
     { "source": "/guides/profile", "destination": "/en/guides/profile" },
     { "source": "/guides/push-notifications", "destination": "/en/guides/push-notifications" },
@@ -58,6 +59,7 @@
                   "en/guides/scoring-modes",
                   "en/guides/bracket-pools",
                   "en/guides/tiebreakers",
+                  "en/guides/exports",
                   "en/guides/notifications"
                 ]
               },
@@ -110,6 +112,7 @@
                   "es/guides/scoring-modes",
                   "es/guides/bracket-pools",
                   "es/guides/tiebreakers",
+                  "es/guides/exports",
                   "es/guides/notifications"
                 ]
               },

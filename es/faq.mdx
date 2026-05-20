@@ -48,10 +48,10 @@ Toqui es una app de Juegos privados de predicciones de fútbol para grupos de am
   </Accordion>
 
   <Accordion title="¿Puedo cambiar mis predicciones después de enviarlas?">
-    Sí, mientras no haya pasado el plazo. Edita tus predicciones cuando quieras antes del cierre:
+    Sí, mientras no haya pasado el plazo. El momento de cierre lo configura el organizador por etapa, así que revisa las reglas de puntuación de tu Juego para saber exactamente cuándo cierran. Los valores por defecto son:
 
-    - **Modo Casual:** Las predicciones cierran individualmente al inicio de cada partido.
-    - **Escalonado / Bracket en Cascada:** Las predicciones cierran al inicio de la etapa (p. ej., todas las predicciones de la fase de grupos se cierran el día que empieza la fase de grupos).
+    - **Modo Casual:** las predicciones cierran individualmente al inicio de cada partido.
+    - **Escalonado / Bracket en Cascada:** todas las predicciones de una etapa cierran al inicio de esa etapa (p. ej., todas las predicciones de la fase de grupos se cierran cuando arranca el primer partido de la fase de grupos).
 
     Una vez cerrado un partido o una etapa, las predicciones para ese partido ya no se pueden agregar ni cambiar.
   </Accordion>
@@ -69,12 +69,29 @@ Toqui es una app de Juegos privados de predicciones de fútbol para grupos de am
   </Accordion>
 
   <Accordion title="¿Qué significa 'cierre de predicciones'?">
-    El "cierre de predicciones" es el plazo después del cual no se pueden enviar nuevas predicciones para un partido o etapa del torneo. Dependiendo del modo de puntuación de tu Juego:
+    El "cierre de predicciones" es el plazo después del cual no se pueden enviar nuevas predicciones para un partido o etapa del torneo. Cada etapa de tu Juego tiene uno de tres ajustes de cierre (los modos preestablecidos definen valores por defecto, pero el organizador puede configurarlos):
 
-    - En modo **Casual**, las predicciones cierran al inicio de cada partido individual.
-    - En modo **Escalonado** o **Bracket en Cascada**, todas las predicciones de una etapa cierran juntas al inicio de esa etapa.
+    - **Por partido** — las predicciones cierran individualmente al inicio de cada partido.
+    - **Inicio de etapa** — todas las predicciones de la etapa cierran cuando arranca el primer partido de esa etapa.
+    - **Personalizado** — una fecha y hora específicas que eligió el organizador.
 
     Después de un cierre, las predicciones enviadas se vuelven visibles para todos los miembros del Juego.
+  </Accordion>
+
+  <Accordion title="¿Cuándo pueden los miembros empezar a hacer predicciones de la fase eliminatoria?">
+    Cada cruce de eliminatoria se habilita para predicciones en cuanto se confirman las dos selecciones del partido — normalmente apenas terminan los partidos de la fase de grupos correspondientes. No hace falta esperar a que termine toda la fase de grupos para empezar a predecir.
+
+    Todas las predicciones de eliminatoria cierran juntas al inicio del primer partido de eliminatoria (Octavos de Final o Dieciseisavos, dependiendo del torneo). Los últimos cruces en habilitarse pueden tener una ventana ajustada — a veces menos de un día — así que conviene avisarle a tu grupo que revise el bracket a medida que la fase de grupos llega a su fin.
+  </Accordion>
+
+  <Accordion title="¿Alguien se puede unir al Juego después de que empezó el torneo?">
+    Sí. Los miembros nuevos pueden unirse en cualquier momento mientras el Juego esté abierto y bajo el tope de capacidad. Ganan 0 puntos por los partidos que ya cerraron, así que compiten efectivamente desde su fecha de ingreso en adelante.
+
+    Si tu Juego usa un único cierre para la fase de grupos, quien se una después de esa fecha solo podrá enviar predicciones de la fase eliminatoria — una experiencia limpia de "entrada tardía solo para la eliminatoria" muy popular en Juegos comunitarios donde la gente se entera del Juego a mitad de camino.
+  </Accordion>
+
+  <Accordion title="¿La misma persona se puede registrar dos veces?">
+    Los miembros no pueden volver a unirse con el mismo correo — Toqui bloquea cuentas duplicadas con la misma dirección. Como organizador del Juego, también tienes una vista de **Gestionar miembros** en el panel con la lista completa de miembros, sus correos y exportación a CSV, para que puedas auditar y resolver cualquier cosa sospechosa directamente.
   </Accordion>
 </AccordionGroup>
 
@@ -113,6 +130,28 @@ Toqui es una app de Juegos privados de predicciones de fútbol para grupos de am
     4. **Tiempo promedio de envío** — el miembro que envió sus predicciones más temprano en promedio queda más arriba.
 
     Estos niveles aseguran que un desempate casi siempre se pueda resolver sin un fallo manual.
+  </Accordion>
+
+  <Accordion title="¿Las reglas de puntuación se suman? Si predigo el marcador exacto, ¿también gano puntos por el resultado correcto?">
+    Sí — las reglas de puntuación siempre se suman. Una predicción de marcador exacto también satisface "resultado correcto", así que con los puntos por defecto (3 por marcador exacto + 1 por resultado correcto) ganarías **4 puntos**, no 3. Las reglas son chequeos independientes contra tu predicción, no categorías mutuamente excluyentes.
+
+    Esto aplica para todas las reglas: si tu predicción satisface varias reglas (p. ej., marcador exacto + diferencia correcta + arco en cero), ganas los puntos de cada una.
+  </Accordion>
+
+  <Accordion title="¿Puedo dar premios separados para la fase de grupos y la fase eliminatoria?">
+    Las posiciones nativas de Toqui cubren todo el torneo, así que un premio al "mejor general" o "mejor combinado" viene incluido. Para posiciones separadas **solo de la fase de grupos** y **solo de la eliminatoria**, usa la exportación CSV — tiene una fila por predicción con el correo del miembro, la etapa, el partido (selecciones y hora del partido), marcadores predichos vs. reales, hora de envío y el desglose de puntos por regla (`pts_exact_score`, `pts_correct_outcome`, `pts_correct_margin`, `pts_total_goals`, `pts_clean_sheet`, `pts_close_score`) más el total por predicción.
+
+    Filtrar por etapa en Google Sheets o Excel toma unos minutos — escribe a [help@toqui.app](mailto:help@toqui.app) si quieres ayuda armando las fórmulas. Los Juegos comunitarios con varias categorías de premio son una configuración bastante común.
+  </Accordion>
+</AccordionGroup>
+
+## Personalización
+
+<AccordionGroup>
+  <Accordion title="¿Puedo agregar logos de patrocinadores a mi Juego?">
+    Sí. Desde la página de **Configuración** de tu Juego, abre la sección **Patrocinadores** para agregar nombres y logos. Puedes agregar **hasta 20 patrocinadores por Juego**, en cualquier formato de imagen. Sus logos aparecen en la vista **Inicio** del Juego y en la página de **Unirse**, para que tanto los miembros actuales como cualquiera a quien invites puedan ver quién apoya el evento.
+
+    Es útil para Juegos comunitarios con patrocinadores que aportan premios, Juegos de clubes que reconocen comercios locales o cualquier evento donde quieras agradecer a los colaboradores de forma visible.
   </Accordion>
 </AccordionGroup>
 

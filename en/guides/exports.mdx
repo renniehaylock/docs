@@ -1,0 +1,72 @@
+---
+title: "Export your pool data to CSV"
+description: "Download every prediction from your pool as a CSV — one row per pick, with full match details, predicted vs actual scores, submission time, and per-rule point breakdowns."
+---
+
+Toqui's CSV export gives you the full picture of your pool: every prediction from every member, with full match details, predicted and actual scores, submission times, and a per-rule point breakdown. It's the workhorse behind anything you can't see directly in the standings — separate group-stage and knockout-stage prizes, custom leaderboards, member audits, and archival.
+
+<Note>
+  The export reflects the current state of the pool at the moment you download it. Run a fresh export whenever you need an up-to-date snapshot.
+</Note>
+
+## How to access the export
+
+Only pool organizers can export. From your pool's dashboard, open the **Manage Members** view and click **Export CSV** — the download will start immediately.
+
+## What's in the export
+
+The export is a single CSV with one row per prediction. A pool with 50 members and a 64-match tournament produces roughly 50 × 64 = 3,200 rows.
+
+| Column | Description |
+|---|---|
+| `member_id` | Stable identifier for the pool member |
+| `email` | Member's email address |
+| `stage` | Tournament stage (e.g. group, round of 16, quarter-final) |
+| `game_id` | Stable identifier for the match |
+| `home_team` | Home team name |
+| `away_team` | Away team name |
+| `kickoff_at` | Match kickoff timestamp |
+| `predicted_home_score` | Member's predicted home score |
+| `predicted_away_score` | Member's predicted away score |
+| `actual_home_score` | Final home score (blank for matches not yet played) |
+| `actual_away_score` | Final away score (blank for matches not yet played) |
+| `submitted_at` | When the member submitted (or last edited) the prediction |
+| `pts_exact_score` | Points earned for an exact score match |
+| `pts_correct_outcome` | Points earned for the correct outcome |
+| `pts_correct_margin` | Points earned for the correct goal margin |
+| `pts_total_goals` | Points earned for the correct total goals |
+| `pts_clean_sheet` | Points earned for correctly predicting a clean sheet |
+| `pts_close_score` | Points earned for being within one goal on each side |
+| `pts_total` | Total points awarded for this prediction (sum of the `pts_` columns above) |
+
+<Tip>
+  Scoring rules stack — the `pts_total` column is simply the sum of the per-rule columns. See the FAQ entry on rules stacking if you want to walk through an example.
+</Tip>
+
+## Common uses
+
+<AccordionGroup>
+  <Accordion title="Award separate prizes per stage (group stage, knockouts, combined)">
+    Toqui's built-in standings cover the full tournament. To rank members on just one stage:
+
+    1. Open the CSV in Google Sheets or Excel.
+    2. Filter the `stage` column to the stage you want — for example, only group-stage matches.
+    3. Sum `pts_total` per `member_id` (or `email`) using a pivot table or `SUMIF`.
+    4. Sort descending to get your stage-specific leaderboard.
+
+    Repeat with a different filter to produce the knockout-only leaderboard. The "best combined" prize is the standard Toqui leaderboard — no export needed.
+  </Accordion>
+
+  <Accordion title="Audit member activity">
+    The `email` column lets you spot duplicate or suspicious accounts. Toqui already blocks the same email from joining twice, so for most pools this is a quick sanity check rather than active moderation. Combine with the **Manage Members** view in your dashboard for full member management.
+  </Accordion>
+
+  <Accordion title="Archive your pool after the tournament">
+    Once the tournament ends, exporting the CSV gives you a permanent record of every prediction and result — useful for community pools that run year after year, or for sharing detailed results with sponsors.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+- [Tiebreakers](/en/guides/tiebreakers) — how Toqui's built-in standings resolve equal totals.
+- [Scoring modes](/en/guides/scoring-modes) — the rules that produce the `pts_*` columns.
