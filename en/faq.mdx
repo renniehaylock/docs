@@ -48,12 +48,12 @@ Toqui is a private soccer prediction pool app for friend groups, offices, and co
   </Accordion>
 
   <Accordion title="Can I change my picks after submitting?">
-    Yes, as long as the deadline hasn't passed. Edit your picks any time before the lock:
+    Yes, as long as the deadline hasn't passed. Lock timing is configurable per stage by the organizer, so check your pool's scoring rules to see exactly when picks close. The defaults are:
 
-    - **Casual mode:** Picks lock individually at each match's kickoff.
-    - **Escalating / Cascading Bracket:** Picks lock at the start of the stage (e.g., all group-stage picks lock on the day the group stage begins).
+    - **Casual mode:** picks lock individually at each match's kickoff.
+    - **Escalating / Cascading Bracket:** all picks for a stage lock at the start of that stage (e.g., all group-stage picks lock when the first group-stage match kicks off).
 
-    Once a match or stage has locked, picks for that match can no longer be added or changed.
+    Once a match or stage has locked, picks for it can no longer be added or changed.
   </Accordion>
 
   <Accordion title="What happens if I miss the pick deadline?">
@@ -69,12 +69,29 @@ Toqui is a private soccer prediction pool app for friend groups, offices, and co
   </Accordion>
 
   <Accordion title="What does 'picks lock' mean?">
-    "Picks lock" is the deadline after which no new predictions can be submitted for a given match or tournament stage. Depending on your pool's scoring mode:
+    "Picks lock" is the deadline after which no new predictions can be submitted for a given match or tournament stage. Each stage of your pool has one of three lock settings (defaults seeded by the scoring mode, but configurable by the organizer):
 
-    - In **Casual** mode, picks lock at the kickoff time of each individual match.
-    - In **Escalating** or **Cascading Bracket** mode, all picks for a stage lock together at the start of that stage.
+    - **Per match** — picks lock individually at each match's kickoff.
+    - **Stage start** — all picks for the stage lock when the first match of that stage kicks off.
+    - **Custom** — a specific date and time the organizer chose.
 
     After a lock, submitted picks become visible to all pool members.
+  </Accordion>
+
+  <Accordion title="When can members start making knockout-stage picks?">
+    Each knockout matchup opens for predictions as soon as both teams in that matchup are confirmed — typically right after the relevant group-stage matches finish. You don't wait for the entire group stage to end to start picking.
+
+    All knockout picks then lock together at the first knockout-round kickoff (Round of 32 or Round of 16, depending on the tournament). The last matchups to open can have a tight window — sometimes less than a day — so it's worth nudging your group to check the bracket as group play wraps up.
+  </Accordion>
+
+  <Accordion title="Can someone join the pool after the tournament has started?">
+    Yes. New members can join any time the pool is open and under capacity. They earn 0 points for any matches that have already locked, so they're effectively competing from their join date forward.
+
+    If your pool uses a single group-stage lock, anyone who joins after that date can only submit knockout picks — a clean "knockout-only late entry" experience that's popular for community pools where members hear about the pool partway through.
+  </Accordion>
+
+  <Accordion title="Can the same person register twice?">
+    Members can't re-join with the same email — Toqui blocks duplicate accounts on the same address. As the pool organizer, you also have a **Manage Members** view in the dashboard with the full member list, their emails, and CSV export, so you can audit and resolve anything suspicious directly.
   </Accordion>
 </AccordionGroup>
 
@@ -113,6 +130,28 @@ Toqui is a private soccer prediction pool app for friend groups, offices, and co
     4. **Average submission time** — the member who submitted their picks earlier on average ranks higher.
 
     These tiers ensure a tiebreak can almost always be resolved without a manual ruling.
+  </Accordion>
+
+  <Accordion title="Do scoring rules stack? If I predict the exact score, do I also earn points for the correct outcome?">
+    Yes — scoring rules always stack. An exact-score prediction also satisfies "correct outcome," so under the default points (3 for exact score + 1 for correct outcome) you'd earn **4 points**, not 3. The rules are independent checks against your prediction, not mutually exclusive categories.
+
+    This applies to every rule: if your prediction satisfies multiple rules (e.g. exact score + correct margin + clean sheet), you earn the points for each.
+  </Accordion>
+
+  <Accordion title="Can I award separate prizes for the group stage and the knockout stage?">
+    Toqui's native standings cover the full tournament, so a "best overall" or "best combined" prize is built in. For separate **group-stage-only** and **knockout-only** standings, use the CSV export — it has one row per prediction with the member's email, the stage, the match (teams and kickoff time), predicted vs actual scores, submission time, and a per-rule point breakdown (`pts_exact_score`, `pts_correct_outcome`, `pts_correct_margin`, `pts_total_goals`, `pts_clean_sheet`, `pts_close_score`) plus the per-prediction total.
+
+    Filtering by stage in Google Sheets or Excel takes a few minutes — email [help@toqui.app](mailto:help@toqui.app) if you'd like a hand setting up the formulas. Community pools with multiple prize categories are a common setup.
+  </Accordion>
+</AccordionGroup>
+
+## Customization
+
+<AccordionGroup>
+  <Accordion title="Can I add sponsor logos to my pool?">
+    Yes. From your pool's **Settings** page, open the **Sponsors** area to add sponsor names and logos. You can add **up to 20 sponsors per pool**, and any image format works. Their logos appear on the pool's **Home** view and on the **Join** page, so both existing members and anyone you invite can see who's supporting the event.
+
+    This is useful for community pools with prize sponsors, club-run pools recognizing local businesses, or any event where you want to thank contributors visibly.
   </Accordion>
 </AccordionGroup>
 
