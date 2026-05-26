@@ -1,14 +1,14 @@
 ---
 title: "Juegos de bracket: predice el cuadro completo de eliminación"
-description: "Cómo funciona el modo Bracket en Cascada en Toqui: envía tu bracket completo antes de los octavos, gana puntos escalonados y mira cómo los batacazos sacuden la tabla."
+description: "Cómo funciona el modo Bracket en Cascada en Toqui: predice todo el bracket eliminatorio desde antes, tus elecciones caen en cascada por las rondas y los puntos escalan hacia la final."
 ---
 
-Un Juego de bracket es un Juego de predicciones donde te comprometes con toda la fase eliminatoria de una vez — antes de que se juegue un solo partido. Eliges quién gana cada llave de octavos, quién avanza a cuartos, semis y, finalmente, quién levanta la copa. Una vez que se cierra el bracket, vas en piloto automático.
+Un Juego de bracket es un Juego de predicciones donde te comprometes con toda la fase eliminatoria de una vez — antes de que se juegue un solo partido. Eliges quién gana cada llave de Dieciseisavos, quién avanza a cuartos, semis y, finalmente, quién levanta la copa. Una vez que se cierra el bracket, vas en piloto automático.
 
 Este es el modo **Bracket en Cascada** de Toqui. Es la forma más dramática de correr un Juego. También es la más difícil.
 
 <Note>
-  Bracket en Cascada es uno de los tres modos de puntuación preestablecidos. Para compararlo con Casual y Escalonado, mira [Modos de puntuación](/es/guides/scoring-modes).
+  Bracket en Cascada es uno de los tres modos de puntuación preestablecidos. Para compararlo con Casual y Escalonado, mira [Modos de puntuación](/es/guides/scoring-modes). Para todo lo relacionado con los plazos y los cierres, mira [Configura los plazos de predicción de tu Juego](/es/guides/prediction-deadlines).
 </Note>
 
 ## Cómo funciona
@@ -18,30 +18,41 @@ Este es el modo **Bracket en Cascada** de Toqui. Es la forma más dramática de 
     El organizador selecciona Bracket en Cascada al crear el Juego. Esto activa la interfaz de predicción de bracket para todos los miembros.
   </Step>
 
-  <Step title="Los miembros envían sus predicciones a medida que se habilitan las llaves">
-    Cada llave eliminatoria se habilita para predicciones en cuanto se confirman las dos selecciones del partido — normalmente apenas terminan los partidos de la fase de grupos que las determinan. Así, las predicciones de la primera ronda eliminatoria se habilitan durante la fase de grupos; las de cuartos se habilitan a medida que se juega la primera ronda eliminatoria; y así sucesivamente.
+  <Step title="Los miembros predicen todo el bracket desde antes">
+    Una vez disponible el bracket, los miembros lo llenan **de punta a punta antes de que arranque cualquier partido eliminatorio**. No esperás a que los resultados reales confirmen los cruces — los elegís vos, y tus propias elecciones **caen en cascada** río abajo.
 
-    Los miembros eligen un ganador para cada partido eliminatorio del bracket — primera ronda eliminatoria, cuartos, semifinales, tercer puesto y final. No hace falta enviar todas las predicciones en una sola sesión — vuelve a medida que se habilitan nuevas llaves y ajusta cualquier predicción hasta el cierre general del bracket.
+    Si elegís a Argentina para ganarle a Croacia en Dieciseisavos, Argentina aparece automáticamente en tu llave de Octavos. El ganador de Octavos cae a Cuartos, el de Cuartos a Semis, y así hasta la final.
 
-    En esta etapa no estás prediciendo marcadores, solo resultados: qué equipo avanza en cada llave.
+    ```mermaid
+    flowchart TD
+      R32["Dieciseisavos: elegís Argentina 2–1 a Croacia"]
+      R16["Octavos: Argentina aparece automáticamente"]
+      QF["Cuartos: sigue al ganador de Octavos"]
+      SF["Semis: sigue al ganador de Cuartos"]
+      R32 --> R16 --> QF --> SF
+    ```
+
+    Elegís un ganador **y un marcador** para cada cruce en cada ronda — Bracket en Cascada no es un modo de solo ganadores. Las predicciones de marcador cuentan para tus puntos igual que en cualquier otro modo de Toqui.
+
+    ¿Cambiás de opinión sobre una elección anterior? Las llaves río abajo que dependían de ella se limpian para que vuelvas a elegir — el cruce original ya no existe en tu bracket.
   </Step>
 
   <Step title="El bracket se cierra">
-    Por defecto, una vez que arranca el primer partido eliminatorio, las predicciones se cierran para todos — incluidas las llaves cuyos equipos aún no estén confirmados (esas simplemente quedan sin completar). Un solo plazo para todo el bracket: el inicio del primer partido de la fase eliminatoria (Dieciseisavos u Octavos de Final, dependiendo del torneo), sin plazos por partido ni por ronda. Los organizadores que prefieran otra cadencia pueden cambiar las etapas eliminatorias a cierre por partido desde la [pantalla de Reglas de puntuación](/es/guides/create-pool).
+    Todas las predicciones eliminatorias se cierran juntas en un único plazo — por defecto, el inicio del primer partido eliminatorio. No hay plazos por partido ni por ronda en la fase eliminatoria.
 
     <Warning>
-      No hay periodo de gracia después de que se cierra el bracket. Programa un recordatorio antes de que empiece el primer partido eliminatorio para no perderte el plazo.
+      No hay periodo de gracia después de que se cierra el bracket. Programa un recordatorio antes de que empiece el primer partido eliminatorio para no perderte el plazo. Mira [la ventana de transición](/es/guides/prediction-deadlines#ejemplo-real-fase-de-grupos--dieciseisavos-del-mundial) para los detalles de timing que más importan.
     </Warning>
   </Step>
 
   <Step title="Los equipos avanzan — o caen">
-    A medida que se juegan los partidos, la app rastrea qué equipos realmente avanzan. Si predijiste que un equipo gana su primer partido eliminatorio y lo hace, ganas puntos y ese equipo "avanza automáticamente" en tu bracket — queda colocado en tu llave de cuartos predicha.
+    A medida que se juegan los partidos, la app rastrea qué equipos realmente avanzan. Si tu equipo predicho gana, ganas puntos y ese equipo sigue vivo en tu bracket — el equipo que pusiste en la siguiente ronda sigue en juego.
 
     Si tu equipo predicho pierde, no ganas puntos por ese partido, y cada predicción posterior que dependía de ese equipo también se pierde. Un batacazo temprano puede desbaratar un bracket que parecía sólido.
   </Step>
 
   <Step title="Los puntos se acumulan hasta la final">
-    Los puntos escalan con cada etapa. Acertar la final vale mucho más que acertar un partido de octavos. Un miembro que predice muchos batacazos tempranos puede ser superado en las últimas dos rondas por alguien que acertó la final.
+    Los puntos escalan con cada etapa. Acertar la final vale mucho más que acertar un partido de Dieciseisavos. Un miembro que predice muchos batacazos tempranos puede ser superado en las últimas dos rondas por alguien que acertó la final.
   </Step>
 </Steps>
 
@@ -51,15 +62,16 @@ Los puntos usan la misma escala escalonada que el modo Escalonado. Las prediccio
 
 | Etapa | Marcador exacto | Resultado correcto |
 |---|---|---|
+| Dieciseisavos | 5 pts | 3 pts |
 | Octavos de final | 7 pts | 5 pts |
 | Cuartos de final | 10 pts | 7 pts |
 | Semifinal | 15 pts | 10 pts |
 | Tercer puesto | 20 pts | 15 pts |
 | Final | 30 pts | 20 pts |
 
-"Marcador exacto" en un Juego de bracket significa que también predijiste el marcador exacto de ese partido (opcional — la interfaz del bracket te permite agregar predicciones de marcador encima de las predicciones de resultado).
+La columna "Marcador exacto" aplica cuando coinciden tu ganador *y* tu marcador con el resultado real. "Resultado correcto" aplica cuando acertás al ganador pero el marcador no coincide. Las reglas de puntuación se suman como en cualquier otro modo — mirá [Modos de puntuación](/es/guides/scoring-modes) para la lista completa.
 
-Acertar quién avanza no da puntos por sí solo — el valor de acertar una llave es que el equipo que elegiste sigue vivo en tu bracket para la *siguiente* predicción. Si la llave que predijiste para un partido específico no se llega a dar (porque uno de los equipos fue eliminado antes), ganas **0 puntos por ese partido sin importar el marcador que hayas escrito**.
+Acertar quién avanza no da puntos por sí solo en una ronda futura — el valor de acertar una llave es que el equipo que elegiste sigue vivo en tu bracket para la *siguiente* predicción. Si la llave que predijiste para un partido específico no se llega a dar (porque uno de los equipos fue eliminado antes), ganas **0 puntos por ese partido sin importar el marcador que hayas escrito**.
 
 Igual que en los demás modos, la puntuación usa el resultado del **tiempo reglamentario + tiempo extra**. Los penales no entran en la cuenta — mira [Cómo se leen los marcadores](/es/guides/scoring-modes#como-se-leen-los-marcadores).
 
@@ -71,19 +83,19 @@ Esto crea momentos de suspenso colectivo que un Juego clásico de partido a part
 
 ## El plazo: no te lo pierdas
 
-Todas las predicciones del bracket deben enviarse antes del primer partido de la fase eliminatoria (Dieciseisavos u Octavos de Final, dependiendo del torneo). Es un plazo único y firme para todo el bracket — aunque las llaves individuales se habiliten progresivamente a medida que se confirman las selecciones durante la fase de grupos.
+Todas las predicciones del bracket deben enviarse antes del primer partido de la fase eliminatoria. Es un plazo único y firme para todo el bracket. Si un miembro no envió antes de ese momento, no puede predecir *ningún* partido eliminatorio por el resto del torneo.
 
 <Tip>
-  Comparte la fecha y hora del plazo con tu grupo cuando compartas el enlace de invitación. Un recordatorio por WhatsApp el día antes del primer partido eliminatorio hace mucha diferencia.
+  Comparte la fecha y hora del plazo con tu grupo cuando compartas el enlace de invitación. Un recordatorio por WhatsApp el día antes del primer partido eliminatorio hace mucha diferencia. Para el recorrido completo de cómo funcionan los plazos, mándale a tus miembros [¿Cuándo puedo hacer mis predicciones?](/es/when-can-i-predict).
 </Tip>
 
 ## ¿Es el modo bracket para tu grupo?
 
 <AccordionGroup>
   <Accordion title="Cuándo funciona mejor el modo bracket">
-    El modo bracket es ideal para grupos donde los miembros quieren comprometerse temprano y luego solo mirar. Es de bajo mantenimiento comparado con los modos partido a partido — sin plazos por partido ni por ronda en la fase eliminatoria. Los miembros llenan el bracket a medida que se habilitan las llaves y después dejan que el torneo se juegue.
+    El modo bracket es ideal para grupos que quieren la sensación de predicción de bracket de un solo tiro — el tipo de cosa por la que la gente se junta, debate y le toma captura. Premia las convicciones: te comprometés con una visión de cómo se va a jugar el torneo, y después lo ves desarrollarse.
 
-    Premia a quienes tienen buen olfato para predecir hasta dónde llegarán los equipos en el torneo, más que a quienes pueden predecir marcadores individuales.
+    Es de bajo mantenimiento una vez enviado — sin plazos por partido ni por ronda en la fase eliminatoria. Los miembros completan todo el bracket y después dejan que el torneo se juegue.
   </Accordion>
 
   <Accordion title="Cuándo elegir Escalonado en su lugar">

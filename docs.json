@@ -19,10 +19,12 @@
     { "source": "/introduction", "destination": "/en/introduction" },
     { "source": "/quickstart", "destination": "/en/quickstart" },
     { "source": "/join-a-pool", "destination": "/en/join-a-pool" },
+    { "source": "/when-can-i-predict", "destination": "/en/when-can-i-predict" },
     { "source": "/faq", "destination": "/en/faq" },
     { "source": "/troubleshooting", "destination": "/en/troubleshooting" },
     { "source": "/guides/create-pool", "destination": "/en/guides/create-pool" },
     { "source": "/guides/invite-members", "destination": "/en/guides/invite-members" },
+    { "source": "/guides/prediction-deadlines", "destination": "/en/guides/prediction-deadlines" },
     { "source": "/guides/scoring-modes", "destination": "/en/guides/scoring-modes" },
     { "source": "/guides/bracket-pools", "destination": "/en/guides/bracket-pools" },
     { "source": "/guides/tiebreakers", "destination": "/en/guides/tiebreakers" },
@@ -48,7 +50,8 @@
                 "pages": [
                   "en/introduction",
                   "en/quickstart",
-                  "en/join-a-pool"
+                  "en/join-a-pool",
+                  "en/when-can-i-predict"
                 ]
               },
               {
@@ -56,6 +59,7 @@
                 "pages": [
                   "en/guides/create-pool",
                   "en/guides/invite-members",
+                  "en/guides/prediction-deadlines",
                   "en/guides/scoring-modes",
                   "en/guides/bracket-pools",
                   "en/guides/tiebreakers",
@@ -101,7 +105,8 @@
                 "pages": [
                   "es/introduction",
                   "es/quickstart",
-                  "es/join-a-pool"
+                  "es/join-a-pool",
+                  "es/when-can-i-predict"
                 ]
               },
               {
@@ -109,6 +114,7 @@
                 "pages": [
                   "es/guides/create-pool",
                   "es/guides/invite-members",
+                  "es/guides/prediction-deadlines",
                   "es/guides/scoring-modes",
                   "es/guides/bracket-pools",
                   "es/guides/tiebreakers",

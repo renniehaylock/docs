@@ -1,14 +1,14 @@
 ---
 title: "Bracket Pools: Predict the Full Knockout Draw"
-description: "How Cascading Bracket mode works in Toqui: submit your full knockout bracket before R16, earn escalating points, and watch upsets ripple through standings."
+description: "How Cascading Bracket mode works in Toqui: predict the whole knockout bracket up front, your picks cascade through the rounds, and points scale toward the final."
 ---
 
-A bracket pool is a prediction pool where you commit to the entire knockout stage all at once — before a single match is played. You pick who wins every Round of 16 matchup, who advances to the quarterfinals, the semis, and ultimately who lifts the trophy. Once the bracket locks, you're along for the ride.
+A bracket pool is a prediction pool where you commit to the entire knockout stage all at once — before a single match is played. You pick who wins every Round of 32 matchup, who advances to the quarterfinals, the semis, and ultimately who lifts the trophy. Once the bracket locks, you're along for the ride.
 
 This is Toqui's **Cascading Bracket** mode. It's the most dramatic way to run a pool. It's also the hardest.
 
 <Note>
-  Cascading Bracket is one of three preset scoring modes. To compare it with Casual and Escalating, see [Scoring modes](/en/guides/scoring-modes).
+  Cascading Bracket is one of three preset scoring modes. To compare it with Casual and Escalating, see [Scoring modes](/en/guides/scoring-modes). For everything about deadlines and lock timing, see [Set prediction deadlines for your pool](/en/guides/prediction-deadlines).
 </Note>
 
 ## How it works
@@ -18,30 +18,41 @@ This is Toqui's **Cascading Bracket** mode. It's the most dramatic way to run a 
     The organizer selects Cascading Bracket when creating the pool. This enables the bracket prediction interface for all members.
   </Step>
 
-  <Step title="Members submit their picks as matchups open">
-    Each knockout matchup opens for predictions as soon as both teams in it are confirmed — usually right after the group-stage matches that determine those teams finish. So picks for the first knockout round become available during the group stage; quarterfinal picks open as the first knockout round plays out; and so on.
+  <Step title="Members predict the entire bracket up front">
+    Once the bracket is available, members fill it in **end to end before any knockout game kicks off**. You don't wait for matchups to be confirmed by real results — you pick them yourself, and your own picks **cascade** downstream.
 
-    Members pick a winner for every knockout match across the bracket — first knockout round, quarterfinals, semifinals, third-place match, and final. You don't have to enter them all in one session — come back as new matchups open and adjust any prediction up until the bracket-wide lock.
+    If you pick Argentina to beat Croatia in R32, Argentina automatically appears in your R16 slot. Your R16 winner cascades to your QF slot, your QF winner to your SF slot, and so on through the final.
 
-    You're not predicting scores at this stage, just outcomes: which team advances from each matchup.
+    ```mermaid
+    flowchart TD
+      R32["R32: You pick Argentina to beat Croatia 2–1"]
+      R16["R16: Argentina appears here automatically"]
+      QF["QF: Follows your R16 winner"]
+      SF["SF: Follows your QF winner"]
+      R32 --> R16 --> QF --> SF
+    ```
+
+    You pick a winner **and a scoreline** for every matchup in every round — Cascading Bracket isn't a winner-only mode. Score predictions count toward your points the same way they do in every other Toqui mode.
+
+    Change your mind on an earlier pick? The downstream slots that depended on it get cleared so you can re-pick — the original matchup doesn't exist in your bracket anymore.
   </Step>
 
   <Step title="The bracket locks">
-    By default, once the first knockout match kicks off, picks lock for everyone — including any matchups whose teams aren't yet confirmed (those simply remain unfilled). One deadline for the entire bracket: the first knockout-round kickoff (Round of 32 or Round of 16, depending on the tournament), with no per-match or per-round deadlines. Organizers who want a different cadence can switch knockout stages to per-match locks on the [Scoring Rules screen](/en/guides/create-pool).
+    All knockout picks lock together at a single deadline — by default, the kickoff of the first knockout game. There are no per-match or per-round deadlines for the knockouts.
 
     <Warning>
-      There's no grace period once the bracket locks. Set a reminder before the first knockout match starts so you don't miss the deadline.
+      There's no grace period once the bracket locks. Set a reminder before the first knockout match starts so you don't miss the deadline. See [the transition window](/en/guides/prediction-deadlines#real-world-example-world-cup-group--r32) for the timing details that matter most.
     </Warning>
   </Step>
 
   <Step title="Teams advance — or crash out">
-    As matches are played, the app tracks which teams actually advance. If you predicted a team to win their first knockout match and they do, you earn points and they "auto-advance" in your bracket — they're slotted into your predicted quarterfinal matchup.
+    As matches are played, the app tracks which teams actually advance. If your predicted team wins, you earn points and they stay alive in your bracket — the team you slotted in the next round is still in play.
 
     If your predicted team loses, you earn no points for that match, and every subsequent prediction that depended on that team is also lost. An early upset can unravel an otherwise strong bracket.
   </Step>
 
   <Step title="Points accumulate through the final">
-    Points scale with each stage. Getting the final right is worth far more than getting a Round of 16 match right. A member who predicts a lot of early upsets can be overtaken in the last two rounds by someone who called the final correctly.
+    Points scale with each stage. Getting the final right is worth far more than getting an R32 match right. A member who predicts a lot of early upsets can be overtaken in the last two rounds by someone who called the final correctly.
   </Step>
 </Steps>
 
@@ -51,15 +62,16 @@ Points use the same escalating scale as the Escalating preset. Correct picks in 
 
 | Stage | Exact score | Correct outcome |
 |---|---|---|
+| Round of 32 | 5 pts | 3 pts |
 | Round of 16 | 7 pts | 5 pts |
 | Quarter-final | 10 pts | 7 pts |
 | Semi-final | 15 pts | 10 pts |
 | Third-place match | 20 pts | 15 pts |
 | Final | 30 pts | 20 pts |
 
-"Exact score" in a bracket pool means you also predicted the exact scoreline for that match (optional — the bracket interface lets you add score predictions on top of your outcome picks).
+The "exact score" column applies when both your winner *and* your scoreline match the actual result. "Correct outcome" applies when your winner is right but your scoreline isn't. Scoring rules stack the same way as in every other mode — see [Scoring modes](/en/guides/scoring-modes) for the full list.
 
-Picking who advances doesn't earn points by itself — the value of getting a matchup right is that the team you picked stays alive in your bracket for the *next* prediction. If the matchup you predicted for a specific match never happens (because one of the teams was knocked out earlier), you earn **0 points for that match regardless of the scoreline you wrote down**.
+Picking who advances doesn't earn points by itself in a future round — the value of getting a matchup right is that the team you picked stays alive in your bracket for the *next* prediction. If the matchup you predicted for a specific match never happens (because one of the teams was knocked out earlier), you earn **0 points for that match regardless of the scoreline you wrote down**.
 
 As in every other mode, scoring uses the **full-time + extra time** result. Penalty kicks don't factor into the calculation — see [How scores are read](/en/guides/scoring-modes#how-scores-are-read).
 
@@ -71,19 +83,19 @@ This creates moments of collective suspense that a regular per-match pool doesn'
 
 ## The deadline: don't miss it
 
-All bracket picks must be submitted before the first knockout-round kickoff (Round of 32 or Round of 16, depending on the tournament). That's a single hard deadline for the entire bracket — even though individual matchups open progressively as teams are confirmed during the group stage.
+All bracket picks must be submitted before the first knockout-round kickoff. That's a single hard deadline for the entire bracket. If a member hasn't submitted before that moment, they can't predict *any* knockout game for the rest of the tournament.
 
 <Tip>
-  Share the deadline date and time with your group when you share the invite link. A WhatsApp reminder the day before the first knockout match starts goes a long way.
+  Share the deadline date and time with your group when you share the invite link. A WhatsApp reminder the day before the first knockout match starts goes a long way. For the full rundown of how deadlines work, send members to [When can I make my predictions?](/en/when-can-i-predict).
 </Tip>
 
 ## Is bracket mode right for your group?
 
 <AccordionGroup>
   <Accordion title="When bracket mode works best">
-    Bracket mode is best for groups where members want to commit early and then largely just watch. It's low-maintenance compared to per-match modes — no per-match or per-round deadlines for the knockouts. Members fill the bracket as matchups open up, then sit back as the tournament plays out.
+    Bracket mode is best for groups that want the one-shot bracket prediction feel — the kind people gather for, debate over, and screenshot. It rewards conviction: you commit to a vision of how the tournament will play out, then watch it unfold.
 
-    It rewards people who have a strong sense of how deep teams will go in the tournament, rather than who can predict individual match scores.
+    It's low-maintenance once submitted — no per-match or per-round deadlines for the knockouts. Members fill the whole bracket, then sit back as the tournament plays out.
   </Accordion>
 
   <Accordion title="When to choose Escalating instead">
