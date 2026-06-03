@@ -46,9 +46,9 @@ Este es el modo **Bracket en Cascada** de Toqui. Es la forma más dramática de 
   </Step>
 
   <Step title="Los equipos avanzan — o caen">
-    A medida que se juegan los partidos, la app rastrea qué equipos realmente avanzan. Si tu equipo predicho gana, ganas puntos y ese equipo sigue vivo en tu bracket — el equipo que pusiste en la siguiente ronda sigue en juego.
+    A medida que se juegan los partidos, la app rastrea qué equipos realmente avanzan. Si tu equipo predicho gana, el equipo que pusiste en la siguiente ronda sigue vivo en tu bracket y la regla de [Avance del Equipo](#avance-del-equipo) te da puntos — incluso si un batacazo previo hizo que la llave que predijiste nunca se jugara.
 
-    Si tu equipo predicho pierde, no ganas puntos por ese partido, y cada predicción posterior que dependía de ese equipo también se pierde. Un batacazo temprano puede desbaratar un bracket que parecía sólido.
+    Si tu equipo predicho pierde, las reglas basadas en marcador dan 0 puntos por ese partido y cada llave posterior que dependía de ese equipo se rompe. Un batacazo temprano puede desbaratar un bracket que parecía sólido — pero Avance del Equipo te sigue dando puntos por las elecciones que sí acertaste río abajo.
   </Step>
 
   <Step title="Los puntos se acumulan hasta la final">
@@ -71,9 +71,53 @@ Los puntos usan la misma escala escalonada que el modo Escalonado. Las prediccio
 
 La columna "Marcador exacto" aplica cuando coinciden tu ganador *y* tu marcador con el resultado real. "Resultado correcto" aplica cuando acertás al ganador pero el marcador no coincide. Las reglas de puntuación se suman como en cualquier otro modo — mirá [Modos de puntuación](/es/guides/scoring-modes) para la lista completa.
 
-Acertar quién avanza no da puntos por sí solo en una ronda futura — el valor de acertar una llave es que el equipo que elegiste sigue vivo en tu bracket para la *siguiente* predicción. Si la llave que predijiste para un partido específico no se llega a dar (porque uno de los equipos fue eliminado antes), ganas **0 puntos por ese partido sin importar el marcador que hayas escrito**.
+Estas reglas basadas en marcador se evalúan contra la llave real. Si la llave que predijiste para un partido específico no se llega a dar (porque uno de los equipos fue eliminado antes), las reglas basadas en marcador dan **0 puntos por ese partido sin importar el marcador que hayas escrito**. La nueva regla de [Avance del Equipo](#avance-del-equipo) que se explica abajo es la única excepción — premia haber elegido al equipo que avanzó incluso si la llave en sí cambió.
 
-Igual que en los demás modos, la puntuación usa el resultado del **tiempo reglamentario + tiempo extra**. Los penales no entran en la cuenta — mira [Cómo se leen los marcadores](/es/guides/scoring-modes#como-se-leen-los-marcadores).
+Para las reglas basadas en marcador, la puntuación usa el resultado del **tiempo reglamentario + tiempo extra**. Los penales no entran en la cuenta — mira [Cómo se leen los marcadores](/es/guides/scoring-modes#como-se-leen-los-marcadores). Avance del Equipo es la única regla que cuenta a los ganadores por penales.
+
+## Avance del Equipo
+
+Avance del Equipo es una regla de puntuación creada específicamente para los Juegos de Bracket en Cascada. Premia haber elegido al equipo correcto para ganar un partido eliminatorio, incluso cuando tu bracket se salió de los rieles.
+
+### El problema que resuelve
+
+En un bracket en cascada, predecís todo el cuadro desde antes. Apenas ocurre un batacazo, tus llaves predichas dejan de coincidir con la realidad — y con las reglas basadas en marcador, esas llaves rotas dan 0 puntos porque la llave nunca se llegó a jugar.
+
+Avance del Equipo rompe esa barrera. Mientras hayas elegido al equipo que realmente avanzó, sumás puntos — sin importar contra quién haya terminado jugando.
+
+### Cómo funciona
+
+- **Cuándo se activa:** el equipo que predijiste para avanzar gana su partido eliminatorio.
+- **Cuenta victorias por:** tiempo reglamentario, tiempo extra *o* tanda de penales. Es la única regla que premia a los ganadores por penales — las demás reglas basadas en marcador ignoran los goles de la tanda.
+- **Aplica a:** todas las rondas eliminatorias, incluidos el partido por el tercer puesto y la final. Los partidos de la fase de grupos no reciben puntos por Avance del Equipo.
+- **Independiente del marcador:** tu pronóstico de "Brasil 2–1 Francia" puede estar totalmente equivocado; si Brasil avanza, igual te llevás los puntos de Avance del Equipo.
+
+### Puntos por defecto por ronda
+
+Calibrados para ubicarse entre Resultado Correcto y Marcador Exacto en cada etapa, creciendo a medida que las rondas son más decisivas:
+
+| Etapa | Avance del Equipo |
+|---|---|
+| Dieciseisavos | 4 pts |
+| Octavos de final | 6 pts |
+| Cuartos de final | 9 pts |
+| Semifinal | 13 pts |
+| Tercer puesto | 18 pts |
+| Final | 25 pts |
+
+Como con cualquier otra regla, los organizadores pueden ajustar el valor por etapa o desactivar la regla por completo desde la pantalla de Reglas de puntuación.
+
+### Ejemplo
+
+Predijiste Brasil vs. Alemania en cuartos, con Brasil ganando 2–1. En la realidad, un batacazo previo rompió tu bracket, así que Brasil juega contra Japón en tu llave — y Brasil gana por penales.
+
+| Regla | Puntos |
+|---|---|
+| Marcador exacto | 0 — la llave no se dio |
+| Resultado correcto | 0 — la llave no se dio |
+| **Avance del Equipo** | **9 — Brasil avanzó, que es a quien elegiste** |
+
+Sin Avance del Equipo, los cuartos son una hecatombe. Con la regla, igual te llevás algo por haber leído bien el recorrido.
 
 ## El efecto cascada
 

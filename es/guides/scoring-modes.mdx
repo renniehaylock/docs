@@ -86,9 +86,18 @@ Se aplican los mismos valores de puntos escalonados, pero el drama se acumula a 
 
 **Cuándo se cierran las predicciones:** todas las predicciones del bracket se cierran al inicio del primer partido de la fase eliminatoria (Dieciseisavos u Octavos de Final, dependiendo del torneo). No hay plazos por partido ni por ronda — solo un plazo único para todo el bracket. Mirá [Configura los plazos de predicción de tu Juego](/es/guides/prediction-deadlines) para el detalle completo.
 
-Los valores de puntos por etapa son idénticos a los de Escalonado (mira la tabla de arriba).
+Los valores de puntos para Marcador Exacto y Resultado Correcto son idénticos a los de Escalonado (mira la tabla de arriba). Bracket en Cascada también activa una regla exclusiva de la fase eliminatoria, **Avance del Equipo**, que da puntos cuando el equipo que elegiste avanza — incluso si la llave que predijiste no se llegó a jugar, y aun cuando el partido se define por penales. Puntos por defecto por ronda:
 
-Para una explicación completa de cómo funcionan los Juegos de bracket, mira [Juegos de bracket](/es/guides/bracket-pools).
+| Etapa | Avance del Equipo |
+|---|---|
+| Dieciseisavos | 4 pts |
+| Octavos de final | 6 pts |
+| Cuartos de final | 9 pts |
+| Semifinal | 13 pts |
+| Tercer puesto | 18 pts |
+| Final | 25 pts |
+
+Para una explicación completa de cómo funcionan los Juegos de bracket — incluido un ejemplo desarrollado de Avance del Equipo — mira [Juegos de bracket](/es/guides/bracket-pools).
 
 ---
 
@@ -109,6 +118,10 @@ El modo Personalizado te permite establecer tus propios valores de puntos para c
 
 En modo Personalizado asignas un valor en puntos a cualquier combinación de estas seis reglas, de forma independiente para cada etapa del torneo. Las reglas que dejes en cero (o desactives) simplemente no puntúan.
 
+<Note>
+  Una séptima regla, **Avance del Equipo**, está disponible solo en Bracket en Cascada — está pensada para el formato de predicción de bracket y no aplica en los modos partido a partido. Mira [Juegos de bracket](/es/guides/bracket-pools#avance-del-equipo) para los detalles.
+</Note>
+
 <Tip>
   Una configuración personalizada popular: usa Marcador exacto + Resultado correcto como base (como Escalonado), luego agrega Arco en cero y Diferencia correcta con unos puntos extra. Esto premia el conocimiento táctico más profundo sin hacer que el Marcador exacto se sienta arbitrario.
 </Tip>
@@ -117,11 +130,14 @@ En modo Personalizado asignas un valor en puntos a cualquier combinación de est
 
 ## Cómo se leen los marcadores
 
-Cada predicción se evalúa contra el resultado del **tiempo reglamentario + tiempo extra** — los penales no cuentan. Si un partido eliminatorio termina 1–1 tras los 120 minutos y se define por penales, una predicción de 1–1 se considera marcador exacto, sin importar quién gane la tanda.
+Las reglas basadas en marcador (Marcador exacto, Resultado correcto, Diferencia correcta, Total de goles, Arco en cero, Marcador cercano) se evalúan contra el resultado del **tiempo reglamentario + tiempo extra** — los penales no cuentan. Si un partido eliminatorio termina 1–1 tras los 120 minutos y se define por penales, una predicción de 1–1 se considera marcador exacto, sin importar quién gane la tanda.
 
 En Toqui no se pueden predecir los penales. El marcador que ingreses siempre se aplica al resultado de tiempo reglamentario + tiempo extra.
 
-En los modos **Casual**, **Escalonado** y **Personalizado**, cada partido se puntúa por su marcador final de forma independiente. **Bracket en Cascada** agrega una regla extra encima — si la llave que predijiste para un partido no se llega a dar (porque uno de los equipos quedó eliminado antes), ganas 0 puntos por ese partido sin importar el marcador que hayas escrito. Mira [Juegos de bracket](/es/guides/bracket-pools) para más detalles.
+En los modos **Casual**, **Escalonado** y **Personalizado**, cada partido se puntúa por su marcador final de forma independiente. **Bracket en Cascada** agrega dos comportamientos extra encima:
+
+- Si la llave que predijiste para un partido no se llega a dar (porque uno de los equipos quedó eliminado antes), las reglas basadas en marcador dan 0 puntos por ese partido sin importar el marcador que hayas escrito.
+- La regla de **Avance del Equipo** igual te da puntos cuando el equipo que elegiste gana — incluso por penales — así que una llave rota no siempre significa quedar en cero. Mira [Juegos de bracket](/es/guides/bracket-pools#avance-del-equipo) para la explicación completa.
 
 ---
 
@@ -129,8 +145,9 @@ En los modos **Casual**, **Escalonado** y **Personalizado**, cada partido se pun
 
 | | Casual | Escalonado | Bracket en Cascada | Personalizado |
 |---|---|---|---|---|
-| Reglas de puntuación | 2 | 2 | 2 | Hasta 6 |
+| Reglas de puntuación | 2 | 2 | 2 + Avance del Equipo | Hasta 6 |
 | Puntos varían por etapa | No | Sí | Sí | Tú decides |
 | Cómo se envían las predicciones | Por partido | Por etapa | Todo de una | Por partido o etapa |
 | Cierre de predicciones | Inicio de cada partido | Inicio de la etapa | Antes de octavos | Configurable |
+| Premia a los ganadores por penales | No | No | Sí (vía Avance del Equipo) | No |
 | Mejor para | Principiantes | La mayoría de grupos | Quienes buscan drama | Usuarios avanzados |
