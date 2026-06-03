@@ -112,6 +112,7 @@ Toqui is a private soccer prediction pool app for friend groups, offices, and co
     | Total goals | Right total number of goals | 2 |
     | Clean sheet | Correctly predicted a team conceding 0 goals | 2 |
     | Close score | Each predicted score within 1 goal of the actual score | 1 |
+    | Team advancement *(Cascading Bracket only)* | The team you picked won their knockout match — full time, extra time, or penalty shootout — even if your predicted matchup never happened | 4–25, scaling by round |
 
     Organizers can customize which rules apply and adjust the point values per tournament stage. In **Escalating** and **Cascading Bracket** modes, point values increase as the tournament progresses — a correct outcome in the final is worth far more than one in the group stage.
 
@@ -136,9 +137,11 @@ Toqui is a private soccer prediction pool app for friend groups, offices, and co
   </Accordion>
 
   <Accordion title="What happens if a match goes to penalty kicks?">
-    Penalty kicks don't count for scoring. Every prediction is checked against the **full-time + extra time** result. If you predicted 1–1 for a knockout match that ended 1–1 after extra time and went to penalties, you'd still get full credit for the exact score regardless of who won the shootout.
+    Score-based rules don't count penalty kicks. Every score prediction is checked against the **full-time + extra time** result. If you predicted 1–1 for a knockout match that ended 1–1 after extra time and went to penalties, you'd still get full credit for the exact score regardless of who won the shootout.
 
     There's no way to predict penalty kicks in Toqui — your score prediction always applies to the regulation + extra time result.
+
+    The one exception is the **Team Advancement** rule in Cascading Bracket pools, which rewards the team that actually advances — including shootout winners. See [Bracket pools](/en/guides/bracket-pools#team-advancement) for the full breakdown.
   </Accordion>
 
   <Accordion title="Do scoring rules stack? If I predict the exact score, do I also earn points for the correct outcome?">
@@ -148,7 +151,7 @@ Toqui is a private soccer prediction pool app for friend groups, offices, and co
   </Accordion>
 
   <Accordion title="Can I award separate prizes for the group stage and the knockout stage?">
-    Toqui's native standings cover the full tournament, so a "best overall" or "best combined" prize is built in. For separate **group-stage-only** and **knockout-only** standings, use the CSV export — it has one row per prediction with the member's email, the stage, the match (teams and kickoff time), predicted vs actual scores, submission time, and a per-rule point breakdown (`pts_exact_score`, `pts_correct_outcome`, `pts_correct_margin`, `pts_total_goals`, `pts_clean_sheet`, `pts_close_score`) plus the per-prediction total.
+    Toqui's native standings cover the full tournament, so a "best overall" or "best combined" prize is built in. For separate **group-stage-only** and **knockout-only** standings, use the CSV export — it has one row per prediction with the member's email, the stage, the match (teams and kickoff time), predicted vs actual scores, submission time, and a per-rule point breakdown (`pts_exact_score`, `pts_correct_outcome`, `pts_correct_margin`, `pts_total_goals`, `pts_clean_sheet`, `pts_close_score`, and `pts_team_advancement` for Cascading Bracket pools) plus the per-prediction total.
 
     Filtering by stage in Google Sheets or Excel takes a few minutes — email [help@toqui.app](mailto:help@toqui.app) if you'd like a hand setting up the formulas. Community pools with multiple prize categories are a common setup.
   </Accordion>

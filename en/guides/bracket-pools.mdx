@@ -46,9 +46,9 @@ This is Toqui's **Cascading Bracket** mode. It's the most dramatic way to run a 
   </Step>
 
   <Step title="Teams advance — or crash out">
-    As matches are played, the app tracks which teams actually advance. If your predicted team wins, you earn points and they stay alive in your bracket — the team you slotted in the next round is still in play.
+    As matches are played, the app tracks which teams actually advance. If your predicted team wins, the team you slotted in the next round stays alive in your bracket and the [Team Advancement](#team-advancement) rule earns you points — even if an earlier upset means your predicted matchup never happened.
 
-    If your predicted team loses, you earn no points for that match, and every subsequent prediction that depended on that team is also lost. An early upset can unravel an otherwise strong bracket.
+    If your predicted team loses, the score-based rules earn 0 for that match and every downstream slot that depended on that team is broken. An early upset can unravel an otherwise strong bracket — but Team Advancement keeps you scoring on the picks you got right downstream.
   </Step>
 
   <Step title="Points accumulate through the final">
@@ -71,9 +71,53 @@ Points use the same escalating scale as the Escalating preset. Correct picks in 
 
 The "exact score" column applies when both your winner *and* your scoreline match the actual result. "Correct outcome" applies when your winner is right but your scoreline isn't. Scoring rules stack the same way as in every other mode — see [Scoring modes](/en/guides/scoring-modes) for the full list.
 
-Picking who advances doesn't earn points by itself in a future round — the value of getting a matchup right is that the team you picked stays alive in your bracket for the *next* prediction. If the matchup you predicted for a specific match never happens (because one of the teams was knocked out earlier), you earn **0 points for that match regardless of the scoreline you wrote down**.
+These score-based rules check your prediction against the actual matchup. If the matchup you predicted for a specific match never happens (because one of the teams was knocked out earlier), the score-based rules earn **0 points for that match regardless of the scoreline you wrote down**. The new [Team Advancement](#team-advancement) rule below is the one exception — it rewards picking the team that advanced even when the matchup itself changed.
 
-As in every other mode, scoring uses the **full-time + extra time** result. Penalty kicks don't factor into the calculation — see [How scores are read](/en/guides/scoring-modes#how-scores-are-read).
+For score-based rules, scoring uses the **full-time + extra time** result. Penalty kicks don't factor into the calculation — see [How scores are read](/en/guides/scoring-modes#how-scores-are-read). Team Advancement is the only rule that counts shootout winners.
+
+## Team Advancement
+
+Team Advancement is a scoring rule built specifically for Cascading Bracket pools. It rewards picking the right team to win a knockout match, even when your bracket has gone off the rails.
+
+### The problem it solves
+
+In a cascading bracket, you predict the whole bracket up front. Once an upset happens, your predicted matchups stop matching reality — and under the regular score-based rules, those broken matchups score 0 because the matchup itself never happened.
+
+Team Advancement breaks that gate. As long as you picked the team that actually advanced, you score — regardless of who they ended up playing.
+
+### How it works
+
+- **Trigger:** the team you predicted to advance wins their knockout match.
+- **Counts wins by:** full time, extra time, *or* penalty shootout. This is the only rule that rewards shootout winners — score-based rules ignore penalty goals.
+- **Applies to:** every knockout round, including the third-place playoff and the final. Group-stage matches don't get a Team Advancement score.
+- **Independent of your scoreline:** your "Brazil 2–1 France" guess can be totally wrong; if Brazil advances, you still get the Team Advancement points.
+
+### Default points per round
+
+Tuned to sit between Correct Outcome and Exact Score at every stage, growing as rounds get more decisive:
+
+| Stage | Team Advancement |
+|---|---|
+| Round of 32 | 4 pts |
+| Round of 16 | 6 pts |
+| Quarter-final | 9 pts |
+| Semi-final | 13 pts |
+| Third-place match | 18 pts |
+| Final | 25 pts |
+
+As with every other rule, organizers can adjust the per-stage point value or switch the rule off entirely from the Scoring Rules screen.
+
+### Example
+
+You predicted Brazil vs. Germany in the quarter-final, with Brazil winning 2–1. In reality an earlier upset broke your bracket, so Brazil plays Japan in your slot — and Brazil wins on penalties.
+
+| Rule | Points |
+|---|---|
+| Exact Score | 0 — the matchup didn't happen |
+| Correct Outcome | 0 — the matchup didn't happen |
+| **Team Advancement** | **9 — Brazil advanced, which is who you picked** |
+
+Without Team Advancement, the quarter-final is a wipe-out. With it, you still earn something for reading the run correctly.
 
 ## The cascade effect
 

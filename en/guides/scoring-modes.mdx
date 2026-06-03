@@ -86,9 +86,18 @@ The same escalating point values apply, but drama compounds as teams are elimina
 
 **When picks lock:** all bracket picks lock at the first knockout-round kickoff (Round of 32 or Round of 16, depending on the tournament). There are no per-match or per-round deadlines — just one deadline for the whole bracket. See [Set prediction deadlines for your pool](/en/guides/prediction-deadlines) for the full breakdown.
 
-Point values per stage are identical to Escalating (see the table above).
+Point values for Exact Score and Correct Outcome are identical to Escalating (see the table above). Cascading Bracket also enables a knockout-only **Team Advancement** rule that scores when the team you picked advances — even if your predicted matchup never happened, and even when the match is decided on penalties. Default Team Advancement points per round:
 
-For a full explanation of how bracket pools work, see [Bracket pools](/en/guides/bracket-pools).
+| Stage | Team Advancement |
+|---|---|
+| Round of 32 | 4 pts |
+| Round of 16 | 6 pts |
+| Quarter-final | 9 pts |
+| Semi-final | 13 pts |
+| Third-place match | 18 pts |
+| Final | 25 pts |
+
+For a full explanation of how bracket pools work — including a worked Team Advancement example — see [Bracket pools](/en/guides/bracket-pools).
 
 ---
 
@@ -109,6 +118,10 @@ Custom mode lets you set your own point values for each scoring rule and each st
 
 In Custom mode you assign a point value to any combination of these six rules, independently for each tournament stage. Rules you leave at zero (or toggle off) simply don't score.
 
+<Note>
+  A seventh rule, **Team Advancement**, is available only in Cascading Bracket mode — it's tightly coupled to the bracket-prediction format and doesn't apply to match-by-match modes. See [Bracket pools](/en/guides/bracket-pools#team-advancement) for details.
+</Note>
+
 <Tip>
   A popular custom setup: use Exact Score + Correct Outcome as the base (like Escalating), then add Clean Sheet and Correct Margin for a few bonus points. This rewards deeper tactical knowledge without making Exact Score feel arbitrary.
 </Tip>
@@ -117,11 +130,14 @@ In Custom mode you assign a point value to any combination of these six rules, i
 
 ## How scores are read
 
-Every prediction is scored against the **full-time + extra time** result — penalty kicks don't count. If a knockout match ends 1–1 after 120 minutes and is decided on penalties, a 1–1 prediction is treated as the exact score regardless of who wins the shootout.
+Score-based rules (Exact Score, Correct Outcome, Correct Margin, Total Goals, Clean Sheet, Close Score) are scored against the **full-time + extra time** result — penalty kicks don't count. If a knockout match ends 1–1 after 120 minutes and is decided on penalties, a 1–1 prediction is treated as the exact score regardless of who wins the shootout.
 
 There's no way to predict penalty kicks in Toqui. Whatever scoreline you enter applies to the regulation + extra time result.
 
-In **Casual**, **Escalating**, and **Custom**, each match is scored on its full-time line independently. **Cascading Bracket** layers one extra rule on top — if your predicted matchup for a given match never happens (because the team you picked got knocked out earlier), you earn 0 points for that match regardless of the score you wrote down. See [Bracket pools](/en/guides/bracket-pools) for more.
+In **Casual**, **Escalating**, and **Custom**, each match is scored on its full-time line independently. **Cascading Bracket** layers two extra behaviors on top:
+
+- If your predicted matchup for a given match never happens (because the team you picked got knocked out earlier), the score-based rules earn 0 points for that match regardless of the score you wrote down.
+- The **Team Advancement** rule still pays out when the team you picked wins — including on penalties — so a broken matchup isn't always a wipe-out. See [Bracket pools](/en/guides/bracket-pools#team-advancement) for the full explanation.
 
 ---
 
@@ -129,8 +145,9 @@ In **Casual**, **Escalating**, and **Custom**, each match is scored on its full-
 
 | | Casual | Escalating | Cascading Bracket | Custom |
 |---|---|---|---|---|
-| Scoring rules | 2 | 2 | 2 | Up to 6 |
+| Scoring rules | 2 | 2 | 2 + Team Advancement | Up to 6 |
 | Points vary by stage | No | Yes | Yes | Your choice |
 | Picks submitted | Per match | Per stage | All upfront | Per match or stage |
 | Picks lock | Per match kickoff | Stage start | Before R16 | Configurable |
+| Rewards shootout winners | No | No | Yes (via Team Advancement) | No |
 | Best for | Beginners | Most groups | Drama seekers | Power users |

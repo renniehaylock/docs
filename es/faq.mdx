@@ -112,6 +112,7 @@ Toqui es una app de Juegos privados de predicciones de fútbol para grupos de am
     | Total de goles | Número total de goles correcto | 2 |
     | Arco en cero | Predijiste correctamente que un equipo recibiría cero goles | 2 |
     | Marcador cercano | Cada marcador predicho a 1 gol del marcador real | 1 |
+    | Avance del Equipo *(solo Bracket en Cascada)* | El equipo que elegiste ganó su partido eliminatorio — en tiempo reglamentario, tiempo extra o por penales — incluso si la llave que predijiste no se llegó a jugar | De 4 a 25, escalando por ronda |
 
     Los organizadores pueden personalizar qué reglas aplican y ajustar los valores de puntos por etapa del torneo. En modo **Escalonado** y **Bracket en Cascada**, los valores de puntos aumentan a medida que avanza el torneo — un resultado correcto en la final vale mucho más que uno en la fase de grupos.
 
@@ -136,9 +137,11 @@ Toqui es una app de Juegos privados de predicciones de fútbol para grupos de am
   </Accordion>
 
   <Accordion title="¿Qué pasa si un partido se define por penales?">
-    Los penales no cuentan para la puntuación. Cada predicción se evalúa contra el resultado del **tiempo reglamentario + tiempo extra**. Si predijiste 1–1 para un partido eliminatorio que terminó 1–1 tras el tiempo extra y se fue a penales, sigues ganando el marcador exacto sin importar quién gane la tanda.
+    Las reglas basadas en marcador no cuentan los penales. Cada predicción de marcador se evalúa contra el resultado del **tiempo reglamentario + tiempo extra**. Si predijiste 1–1 para un partido eliminatorio que terminó 1–1 tras el tiempo extra y se fue a penales, sigues ganando el marcador exacto sin importar quién gane la tanda.
 
     En Toqui no se pueden predecir los penales — tu marcador predicho siempre se aplica al resultado de tiempo reglamentario + tiempo extra.
+
+    La única excepción es la regla **Avance del Equipo** en los Juegos de Bracket en Cascada, que premia al equipo que realmente avanza — incluidos los ganadores por penales. Mira [Juegos de bracket](/es/guides/bracket-pools#avance-del-equipo) para el detalle completo.
   </Accordion>
 
   <Accordion title="¿Las reglas de puntuación se suman? Si predigo el marcador exacto, ¿también gano puntos por el resultado correcto?">
@@ -148,7 +151,7 @@ Toqui es una app de Juegos privados de predicciones de fútbol para grupos de am
   </Accordion>
 
   <Accordion title="¿Puedo dar premios separados para la fase de grupos y la fase eliminatoria?">
-    Las posiciones nativas de Toqui cubren todo el torneo, así que un premio al "mejor general" o "mejor combinado" viene incluido. Para posiciones separadas **solo de la fase de grupos** y **solo de la eliminatoria**, usa la exportación CSV — tiene una fila por predicción con el correo del miembro, la etapa, el partido (selecciones y hora del partido), marcadores predichos vs. reales, hora de envío y el desglose de puntos por regla (`pts_exact_score`, `pts_correct_outcome`, `pts_correct_margin`, `pts_total_goals`, `pts_clean_sheet`, `pts_close_score`) más el total por predicción.
+    Las posiciones nativas de Toqui cubren todo el torneo, así que un premio al "mejor general" o "mejor combinado" viene incluido. Para posiciones separadas **solo de la fase de grupos** y **solo de la eliminatoria**, usa la exportación CSV — tiene una fila por predicción con el correo del miembro, la etapa, el partido (selecciones y hora del partido), marcadores predichos vs. reales, hora de envío y el desglose de puntos por regla (`pts_exact_score`, `pts_correct_outcome`, `pts_correct_margin`, `pts_total_goals`, `pts_clean_sheet`, `pts_close_score`, y `pts_team_advancement` para los Juegos de Bracket en Cascada) más el total por predicción.
 
     Filtrar por etapa en Google Sheets o Excel toma unos minutos — escribe a [help@toqui.app](mailto:help@toqui.app) si quieres ayuda armando las fórmulas. Los Juegos comunitarios con varias categorías de premio son una configuración bastante común.
   </Accordion>
