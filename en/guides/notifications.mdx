@@ -1,20 +1,23 @@
 ---
 title: "Notifications: Pick Reminders and Standings Alerts"
-description: "Toqui sends two kinds of push notifications — pick-deadline reminders and standings updates. How to enable them on iOS, Android, and desktop browsers."
+description: "Toqui sends three kinds of push notifications — pick-deadline reminders, standings updates, and scoring-change alerts. How to enable them on iOS, Android, and desktop browsers."
 ---
 
-Toqui sends two types of notifications: reminders before your picks lock, and alerts when your position in the standings changes meaningfully. Neither type requires you to check the app — they arrive on your device whether or not Toqui is open.
+Toqui sends three types of notifications: reminders before your picks lock, alerts when your position in the standings changes meaningfully, and a heads-up when an organizer changes your pool's scoring. None of them require you to check the app — they arrive on your device whether or not Toqui is open.
 
-Both notification types are optional and require browser permission. They're designed to be genuinely useful and not spammy. No marketing emails, no daily digests — just "your picks are about to lock" and "you just jumped to #3."
+These notifications are optional and require browser permission. They're designed to be genuinely useful and not spammy. No marketing emails, no daily digests — just "your picks are about to lock," "you just jumped to #3," and "the scoring changed."
 
-## The two notification types
+## The three notification types
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Pick-deadline reminders" icon="clock">
     Sent before your picks lock. Gives you time to submit or update before you lose the window.
   </Card>
   <Card title="Standings updates" icon="arrow-trend-up">
     Triggered when you move up or down significantly on the leaderboard after results come in.
+  </Card>
+  <Card title="Scoring changes" icon="calculator">
+    Sent when an organizer changes your pool's scoring after games have been played and the leaderboard is recalculated.
   </Card>
 </CardGroup>
 
@@ -29,6 +32,14 @@ A reminder goes out when your pick window is closing — for example, "Picks loc
 ### Standings updates
 
 When results come in and the leaderboard shifts, Toqui notifies you if your position changes by enough to matter — moving into the top 3, jumping several spots, or dropping after a bad round. Minor position changes don't trigger a notification.
+
+### Scoring changes
+
+Pool organizers and admins can edit scoring at any time. If they change it **after games have already been scored**, Toqui recalculates the whole leaderboard and sends everyone in the pool a notification naming who made the change — for example, *"Alex changed the scoring. The leaderboard was recalculated · Garcia Family Pool."* The person who made the change doesn't get notified, and these are never sent by email. Changing only when predictions lock doesn't trigger this — it never affects points.
+
+<Note>
+  This notification is informational — there's nothing you need to do. To see the current point values, open your pool's scoring rules page.
+</Note>
 
 ## How to enable notifications
 

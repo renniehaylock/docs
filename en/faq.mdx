@@ -93,6 +93,14 @@ Toqui is a private soccer prediction pool app for friend groups, offices, and co
     If your pool uses a single group-stage lock, anyone who joins after that date can only submit knockout picks — a clean "knockout-only late entry" experience that's popular for community pools where members hear about the pool partway through.
   </Accordion>
 
+  <Accordion title="Can I create a pool after the tournament has started?">
+    Yes. Pick your tournament as usual — Toqui adapts the locks to where things stand. Stages already underway lock **per match**, so your group can predict every game that hasn't kicked off yet; matches that already started are locked and score 0. Stages that haven't started behave normally for your scoring mode. See [Creating a pool mid-tournament](/en/guides/prediction-deadlines#creating-a-pool-mid-tournament).
+  </Accordion>
+
+  <Accordion title="Why can't I select 'Stage start' for a stage?">
+    That stage has already begun, so a stage-start deadline (which falls at the stage's first kickoff) is in the past and can't apply. Toqui grays it out and locks those matches at each kickoff instead. If a pool you created earlier shows a started stage fully locked, open **Pool Settings → Scoring Rules** and set that stage to **Per match** to reopen the games that haven't started.
+  </Accordion>
+
   <Accordion title="Can the same person register twice?">
     Members can't re-join with the same email — Toqui blocks duplicate accounts on the same address. As the pool organizer, you also have a **Manage Members** view in the dashboard with the full member list, their emails, and CSV export, so you can audit and resolve anything suspicious directly.
   </Accordion>
@@ -123,6 +131,14 @@ Toqui is a private soccer prediction pool app for friend groups, offices, and co
 
   <Accordion title="When does the leaderboard update?">
     Within seconds of a match ending. Toqui receives live match data and updates scores and standings automatically — no organizer action needed, no page refresh required. You may receive a push notification if you've moved up the table.
+  </Accordion>
+
+  <Accordion title="Why did my points or ranking change?">
+    If your points moved when no new match just finished, your pool's organizer (or an admin) likely updated the scoring rules. Organizers can edit scoring at any time; when they do it after games have been played, Toqui recalculates every score under the new rules, so rankings can rise or fall. You'll get a notification naming who made the change. See [Editing the rules later](/en/guides/prediction-deadlines#editing-the-rules-later).
+  </Accordion>
+
+  <Accordion title="Can organizers change the scoring or rules after the pool starts?">
+    Yes. Pool organizers and admins can edit scoring (point values, which rules apply, the scoring mode, the Cascading Bracket toggle) and prediction lock timing at any point in the tournament — there's no need to contact support. Regular members can't edit rules. Changing scoring after games have been played recalculates the whole leaderboard and notifies every member; changing only when predictions lock never affects points.
   </Accordion>
 
   <Accordion title="How are tiebreakers handled?">
