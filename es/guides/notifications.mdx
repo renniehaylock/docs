@@ -3,18 +3,21 @@ title: "Notificaciones: recordatorios de predicciones y alertas de la tabla"
 description: "Toqui envía dos tipos de notificaciones push — recordatorios de cierre de predicciones y avisos de cambios en la tabla. Cómo activarlas en iOS, Android y navegadores de escritorio."
 ---
 
-Toqui envía dos tipos de notificaciones: recordatorios antes de que se cierren tus predicciones y avisos cuando tu posición en la tabla cambia de forma significativa. Ninguno de los dos requiere que abras la app — llegan a tu dispositivo aunque Toqui esté cerrado.
+Toqui envía tres tipos de notificaciones: recordatorios antes de que se cierren tus predicciones, avisos cuando tu posición en la tabla cambia de forma significativa y un aviso cuando un organizador cambia la puntuación de tu Juego. Ninguno requiere que abras la app — llegan a tu dispositivo aunque Toqui esté cerrado.
 
-Ambos tipos son opcionales y requieren permiso del navegador. Están diseñados para ser genuinamente útiles, no para hacer spam. Sin correos de marketing, sin resúmenes diarios — solo "tus predicciones están por cerrarse" y "acabas de saltar al puesto #3".
+Estas notificaciones son opcionales y requieren permiso del navegador. Están diseñadas para ser genuinamente útiles, no para hacer spam. Sin correos de marketing, sin resúmenes diarios — solo "tus predicciones están por cerrarse", "acabas de saltar al puesto #3" y "cambió la puntuación".
 
-## Los dos tipos de notificación
+## Los tres tipos de notificación
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Recordatorios de cierre de predicciones" icon="clock">
     Se envían antes de que se cierren tus predicciones. Te dan tiempo para enviar o actualizar antes de perder la ventana.
   </Card>
   <Card title="Cambios en la tabla" icon="arrow-trend-up">
     Se activan cuando subes o bajas significativamente en la tabla después de que llegan los resultados.
+  </Card>
+  <Card title="Cambios de puntuación" icon="calculator">
+    Se envían cuando un organizador cambia la puntuación de tu Juego después de que se jugaron partidos y la tabla se recalcula.
   </Card>
 </CardGroup>
 
@@ -29,6 +32,14 @@ Recibes un recordatorio cuando tu ventana de predicción está por cerrarse — 
 ### Cambios en la tabla
 
 Cuando llegan los resultados y la tabla se mueve, Toqui te avisa si tu posición cambia lo suficiente como para que importe — entrar al top 3, saltar varios puestos o caer después de una ronda mala. Los cambios menores no generan una notificación.
+
+### Cambios de puntuación
+
+Los organizadores y administradores del Juego pueden editar la puntuación en cualquier momento. Si la cambian **después de que ya se puntuaron partidos**, Toqui recalcula toda la tabla y le envía a todos en el Juego una notificación que nombra a quien hizo el cambio — por ejemplo, *"Alex cambió la puntuación. La tabla se recalculó · Juego Familia García."* A quien hizo el cambio no se le notifica, y nunca se envían por correo. Cambiar solo cuándo se cierran las predicciones no dispara esto — nunca afecta los puntos.
+
+<Note>
+  Esta notificación es informativa — no hay nada que tengas que hacer. Para ver los valores de puntos vigentes, abre la página de reglas de puntuación de tu Juego.
+</Note>
 
 ## Cómo activar las notificaciones
 

@@ -155,9 +155,47 @@ The last group game of a World Cup typically ends around 10pm the night before R
 We send reminder notifications ahead of bracket deadlines and stage starts, so members aren't relying on memory alone. Members can read the full member-facing version of this content in [When can I make my predictions?](/en/when-can-i-predict).
 </Info>
 
+## Creating a pool mid-tournament
+
+You can create a pool after the tournament has already kicked off — handy when a group decides to play partway through. Locking adapts to where the tournament is:
+
+- **Stages already underway** lock **per match**. Each remaining game stays open until its own kickoff, so your group can predict every match that hasn't started yet. Games that already kicked off are locked and earn 0 points for everyone — there's no way to predict a match that's already begun.
+- **Stages that haven't started** keep the normal behavior for your scoring mode. In Escalating, for example, a future stage still locks when its first match kicks off.
+
+Because a started stage can't use a stage-wide deadline that's already in the past, the **Stage start** lock option is grayed out for those stages in the setup screen, with a note that upcoming matches lock at each kickoff instead.
+
+<Note>
+  **Pool created mid-tournament before this behavior shipped?** It may show a started stage with every match locked. The fix is self-serve: the organizer opens **Pool Settings → Scoring Rules** and switches that stage's prediction lock to **Per match**. The remaining games reopen immediately — no need to contact support.
+</Note>
+
 ## Editing the rules later
 
-You can change rules — lock modes, dates, even Cascading Bracket on/off — **up until the first match of the tournament kicks off**. After that, rules are frozen for the rest of the tournament. This protects every member who already submitted under the original rules.
+The pool's organizer and any admins can edit the rules **at any point during the tournament** — there's no cutoff, and you never need to contact support. Regular members can't change rules. This is built for the case where a pool was set up with the wrong rules and needs fixing mid-tournament.
+
+What's editable:
+
+- **Scoring** — point values, turning individual rules on or off, the scoring mode, and the Cascading Bracket toggle.
+- **Prediction lock timing** — the per-stage lock mode (Per match / Stage start / Custom) for any stage that hasn't locked yet.
+
+### What happens when you change scoring after games have been played
+
+Changing **lock timing** never affects points. Changing **scoring** is different once results are in:
+
+<Steps>
+  <Step title="You confirm the change">
+    Toqui shows a confirmation first: *"This applies the new scoring to every game already played, so rankings may change. All members get a notification."*
+  </Step>
+  <Step title="Every score is recalculated">
+    On confirm, every score in the pool is recomputed under the new rules — including games already played. Rankings can move up or down. Recalculation takes a few moments, so members might briefly see scores updating.
+  </Step>
+  <Step title="Members are notified">
+    Everyone in the pool gets a push and in-app notification naming who made the change — *"[Name] changed the scoring. The leaderboard was recalculated · [Pool name]."* The person who made the change isn't notified, and no email is sent.
+  </Step>
+</Steps>
+
+<Note>
+  No recalculation or notification happens if you change **only lock timing**, or if you edit scoring **before the pool's first game has been scored** — there's nothing to recalculate yet.
+</Note>
 
 ## FAQ
 
@@ -166,7 +204,10 @@ You can change rules — lock modes, dates, even Cascading Bracket on/off — **
     A locked prediction can't be created or edited — by the member, by you, or by anyone. Locks are enforced on our servers, not just in the UI. After a lock, only the scoring engine touches the prediction.
   </Accordion>
   <Accordion title="Can I change a deadline that's already passed?">
-    No. Once a lock has triggered, that window is closed for the rest of the tournament. You also can't change any other rule once the tournament's first match has kicked off.
+    You can't reopen a game that has already kicked off — the per-match kickoff is a hard floor that always applies. But you *can* still change a stage's lock mode for games that haven't started: switching a stage to **Per match**, for example, reopens every match in it that hasn't kicked off yet. Rules in general have no editing cutoff — see [Editing the rules later](#editing-the-rules-later).
+  </Accordion>
+  <Accordion title="Why is 'Stage start' grayed out for a stage?">
+    That stage has already begun. A stage-start deadline would fall at the stage's first kickoff, which is now in the past, so it can't apply. Upcoming matches in that stage lock at each kickoff (Per match) instead. See [Creating a pool mid-tournament](#creating-a-pool-mid-tournament).
   </Accordion>
   <Accordion title="What if a member misses a deadline?">
     Predictions they submitted before the deadline still count. Games they didn't predict simply earn zero points for those games — there's no penalty to their overall score beyond the missed opportunity.

@@ -156,9 +156,47 @@ El último partido de grupos del Mundial normalmente termina cerca de las 10pm d
 Enviamos notificaciones de recordatorio antes de los plazos del bracket y los inicios de etapa, así los miembros no dependen solo de su memoria. Pueden leer la versión completa para miembros en [¿Cuándo puedo hacer mis predicciones?](/es/when-can-i-predict).
 </Info>
 
-## Editar las reglas después
+## Crear un Juego a mitad del torneo
 
-Podés cambiar las reglas — modos de cierre, fechas, incluso activar o desactivar Bracket en Cascada — **hasta el arranque del primer partido del torneo**. Después de eso, las reglas quedan congeladas por el resto del torneo. Esto protege a cada miembro que ya envió predicciones bajo las reglas originales.
+Podés crear un Juego después de que el torneo ya arrancó — útil cuando un grupo decide jugar a mitad de camino. El cierre se adapta a en qué punto está el torneo:
+
+- **Las etapas que ya están en curso** se cierran **por partido**. Cada partido restante queda abierto hasta su propio inicio, así que tu grupo puede predecir todos los partidos que aún no empezaron. Los partidos que ya arrancaron quedan cerrados y suman 0 puntos para todos — no hay forma de predecir un partido que ya empezó.
+- **Las etapas que aún no empezaron** mantienen el comportamiento normal según tu modo de puntuación. En Escalonado, por ejemplo, una etapa futura igual se cierra cuando arranca su primer partido.
+
+Como una etapa ya en curso no puede usar un plazo de toda la etapa que ya quedó en el pasado, la opción de cierre **Inicio de etapa** aparece deshabilitada para esas etapas en la pantalla de configuración, con una nota de que los próximos partidos se cierran en cada inicio.
+
+<Note>
+  **¿Creaste un Juego a mitad del torneo antes de que llegara este comportamiento?** Puede mostrar una etapa en curso con todos los partidos cerrados. La solución la podés hacer vos: el organizador abre **Configuración del Juego → Reglas de puntuación** y cambia el cierre de esa etapa a **Por partido**. Los partidos restantes se reabren al instante — no hace falta contactar a soporte.
+</Note>
+
+## Editar las reglas en cualquier momento
+
+El organizador del Juego y cualquier administrador pueden editar las reglas **en cualquier punto del torneo** — no hay fecha límite, y nunca necesitás contactar a soporte. Los miembros normales no pueden cambiar reglas. Esto está pensado para el caso en que un Juego se configuró con las reglas equivocadas y hay que corregirlo a mitad del torneo.
+
+Qué se puede editar:
+
+- **Puntuación** — valores de puntos, activar o desactivar reglas individuales, el modo de puntuación y el interruptor de Bracket en Cascada.
+- **Momento de cierre de predicciones** — el modo de cierre por etapa (Por partido / Inicio de etapa / Personalizado) para cualquier etapa que todavía no se haya cerrado.
+
+### Qué pasa cuando cambiás la puntuación después de que ya se jugaron partidos
+
+Cambiar el **momento de cierre** nunca afecta los puntos. Cambiar la **puntuación** es distinto una vez que hay resultados:
+
+<Steps>
+  <Step title="Confirmás el cambio">
+    Toqui muestra una confirmación primero: *"Esto aplica la nueva puntuación a todos los partidos ya jugados, así que las posiciones pueden cambiar. Todos los miembros reciben una notificación."*
+  </Step>
+  <Step title="Se recalcula cada puntaje">
+    Al confirmar, cada puntaje del Juego se vuelve a calcular con las nuevas reglas — incluidos los partidos ya jugados. Las posiciones pueden subir o bajar. El recálculo toma unos instantes, así que los miembros podrían ver brevemente los puntajes actualizándose.
+  </Step>
+  <Step title="Se notifica a los miembros">
+    Todos en el Juego reciben una notificación push y dentro de la app que nombra a quien hizo el cambio — *"[Nombre] cambió la puntuación. La tabla se recalculó · [Nombre del Juego]."* A quien hizo el cambio no se le notifica, y no se envía ningún correo.
+  </Step>
+</Steps>
+
+<Note>
+  No ocurre ningún recálculo ni notificación si cambiás **solo el momento de cierre**, o si editás la puntuación **antes de que se haya puntuado el primer partido del Juego** — todavía no hay nada que recalcular.
+</Note>
 
 ## Preguntas frecuentes
 
@@ -167,7 +205,10 @@ Podés cambiar las reglas — modos de cierre, fechas, incluso activar o desacti
     Una predicción cerrada no se puede crear ni editar — ni por el miembro, ni por vos, ni por nadie. Los cierres se aplican en nuestros servidores, no solo en la interfaz. Después del cierre, solo el motor de puntuación toca la predicción.
   </Accordion>
   <Accordion title="¿Puedo cambiar un plazo que ya pasó?">
-    No. Una vez que un cierre se activó, esa ventana queda cerrada por el resto del torneo. Tampoco podés cambiar ninguna otra regla una vez que arrancó el primer partido del torneo.
+    No podés reabrir un partido que ya arrancó — el inicio de cada partido es un piso fijo que siempre aplica. Pero sí podés cambiar el modo de cierre de una etapa para los partidos que todavía no empezaron: cambiar una etapa a **Por partido**, por ejemplo, reabre todos sus partidos que aún no arrancaron. Las reglas en general no tienen fecha límite de edición — mira [Editar las reglas en cualquier momento](#editar-las-reglas-en-cualquier-momento).
+  </Accordion>
+  <Accordion title="¿Por qué 'Inicio de etapa' aparece deshabilitado para una etapa?">
+    Esa etapa ya empezó. Un plazo de inicio de etapa caería en el primer inicio de la etapa, que ya está en el pasado, así que no puede aplicarse. Los próximos partidos de esa etapa se cierran en cada inicio (Por partido). Mira [Crear un Juego a mitad del torneo](#crear-un-juego-a-mitad-del-torneo).
   </Accordion>
   <Accordion title="¿Qué pasa si un miembro se pierde un plazo?">
     Las predicciones que envió antes del plazo siguen contando. Los partidos que no predijo simplemente suman 0 puntos — no hay penalización adicional a su puntaje total más allá de la oportunidad perdida.
