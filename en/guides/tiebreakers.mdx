@@ -1,33 +1,35 @@
 ---
 title: "Tiebreakers: How Toqui Resolves Equal Scores in the Standings"
-description: "How Toqui breaks ties in pool standings — a four-tier cascade from total points to exact scores, goal difference accuracy, and average prediction time."
+description: "How Toqui breaks ties in pool standings — a four-tier cascade from total points to exact scores, correct outcomes, and average prediction time."
 ---
 
-When two or more participants finish a tournament with the same total points, Toqui resolves the tie using a four-tier cascade. Each tier is only evaluated if the previous one still results in a tie, so most ties are broken at Tier 2 without ever reaching the later criteria.
+Members are ranked by total points. When two or more members are tied on points, Toqui applies a fixed sequence of tiebreakers, in order, until the tie is broken. Each tier is only evaluated if the members are still tied after the previous one, so most ties are resolved at Tier 2 without ever reaching the later criteria.
 
 <Note>
-  Tiebreakers apply automatically to every pool regardless of scoring mode. There's nothing to configure — the rules below are the same for Casual, Escalating, Cascading Bracket, and Custom pools.
+  Tiebreakers apply automatically to every pool — there's nothing for members to configure. The cascade works the same way in Casual, Escalating, and Cascading Bracket pools. Custom pools are the one exception, covered below.
 </Note>
 
 ## The four tiers
 
 <Steps>
   <Step title="Tier 1 — Total points">
-    The participant with the highest total points ranks higher. This is the primary ranking criterion and resolves the vast majority of standings.
+    The member with the highest total points ranks higher. This is the primary ranking criterion and resolves the vast majority of standings.
   </Step>
 
   <Step title="Tier 2 — Exact score count">
-    If still tied, the participant with the greater number of exact score predictions (a correctly predicted final score) ranks higher. This rewards precision over the course of the tournament.
+    If still tied, the member who predicted more exact final scores ranks higher. An exact score means both teams' scores were correct. This rewards precision over the course of the tournament.
   </Step>
 
-  <Step title="Tier 3 — Goal difference accuracy">
-    If still tied, Toqui compares how close each participant's predicted goal difference was to the actual goal difference across all matches. The lower the cumulative error, the higher the rank.
+  <Step title="Tier 3 — Correct outcomes">
+    If still tied, the member who predicted more correct results — home win, draw, or away win — ranks higher, even when the exact score was wrong.
 
-    For example, if the actual result is 3–1 (goal difference of 2) and you predicted 2–1 (goal difference of 1), your error for that match is 1. These errors are summed across every match you predicted.
+    Because nailing the exact score also means you got the result right, every exact score counts here too. A member's correct-outcome total is therefore always at least as high as their exact-score total.
   </Step>
 
   <Step title="Tier 4 — Average prediction time">
-    If still tied, the participant who submitted their predictions earlier on average ranks higher. This rewards users who commit to their picks sooner rather than waiting until just before kickoff.
+    If still tied, the member who submitted their predictions earlier on average ranks higher. This rewards members who commit to their picks sooner rather than waiting until just before kickoff.
+
+    The time recorded is when you **first** submitted each pick — editing a prediction later doesn't reset it. The average is taken across the matches that have been scored.
   </Step>
 </Steps>
 
@@ -37,13 +39,41 @@ When two or more participants finish a tournament with the same total points, To
 |---|---|---|
 | 1 | Total points | More points |
 | 2 | Exact score count | More exact scores |
-| 3 | Goal difference accuracy | Lower cumulative error |
+| 3 | Correct outcomes | More correct results |
 | 4 | Average prediction time | Earlier submissions |
+
+## Key things to know
+
+- **Strict order.** Toqui only looks at a lower tier when members are tied on every tier above it. The first point of difference decides the order — a member can rank higher on Tier 2 even while trailing on Tier 3 or 4.
+- **Exact scores also count as correct outcomes.** Nail the exact score and you've also predicted the right result, so that match counts toward both Tier 2 and Tier 3.
+- **Prediction time is when you first submitted.** Editing a pick later never changes its recorded time, and only scored matches feed the average.
+- **Calculated per pool.** Standings and tiebreakers are worked out independently for each pool you're in.
+- **Custom pools can skip a tier.** Tiers 2 and 3 depend on the exact-score and correct-outcome scoring rules. Those rules are always on in Casual, Escalating, and Cascading Bracket pools, but in a Custom pool where an admin turned one off, Toqui simply skips that tiebreaker and moves to the next one.
+
+## Worked example
+
+Three members are tied on **50 points**:
+
+| Member | Exact scores | Correct outcomes | Avg. prediction time |
+|---|---|---|---|
+| Ana | 5 | 9 | Jun 10 |
+| Beto | 5 | 8 | Jun 9 |
+| Carla | 5 | 8 | Jun 12 |
+
+- **Ana vs Beto** are tied on points and exact scores (5 each), so **correct outcomes** decides it — Ana's 9 beats Beto's 8, and Ana ranks higher.
+- **Beto vs Carla** are tied on points, exact scores, *and* correct outcomes (8 each), so it falls to **average prediction time** — Beto submitted earlier, so Beto ranks higher.
+
+Final order: **Ana → Beto → Carla.**
+
+## Where to see why you're tied
+
+- **In the standings**, a **"Tied on N pts"** divider appears between members who are level on points. Tap it to open an explainer that shows the tiebreak order and exactly which stat separated you — for example, *"You're behind Ana — more correct outcomes (9 vs 8)."*
+- **On a member's profile**, their exact scores, correct outcomes, and average prediction time are all listed.
 
 ## Full tie
 
-In the rare case that two participants are tied across all four criteria, they share the same position in the standings.
+If two members are still exactly equal after all four tiers, they share the same position in the standings. In practice this almost never happens — the average prediction time is a precise timestamp, so it nearly always separates them.
 
 <Tip>
-  Submitting picks early isn't just a tiebreaker advantage — it also protects you from missing a lock deadline. See [Scoring modes](/en/guides/scoring-modes) for how and when picks lock in each mode.
+  Submitting picks early isn't just a Tier 4 advantage — it also protects you from missing a lock deadline. See [Scoring modes](/en/guides/scoring-modes) for how and when picks lock in each mode.
 </Tip>

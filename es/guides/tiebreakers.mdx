@@ -1,12 +1,12 @@
 ---
 title: "Desempates: cómo Toqui resuelve puntajes iguales en la tabla"
-description: "Cómo Toqui rompe empates en la tabla del Juego — una cascada de cuatro niveles desde el total de puntos hasta los marcadores exactos, la precisión en la diferencia de goles y el tiempo promedio de envío."
+description: "Cómo Toqui rompe empates en la tabla del Juego — una cascada de cuatro niveles desde el total de puntos hasta los marcadores exactos, los resultados correctos y el tiempo promedio de predicción."
 ---
 
-Cuando dos o más participantes terminan un torneo con el mismo total de puntos, Toqui resuelve el empate con una cascada de cuatro niveles. Cada nivel solo se evalúa si el anterior aún resulta en empate, por lo que la mayoría de los empates se resuelven en el Nivel 2 sin llegar a los criterios siguientes.
+Los participantes se ordenan por el total de puntos. Cuando dos o más participantes empatan en puntos, Toqui resuelve el empate aplicando una secuencia fija de desempates, en orden, hasta que el empate se rompe. Cada nivel solo se evalúa si los participantes siguen empatados tras el anterior, por lo que la mayoría de los empates se resuelven en el Nivel 2 sin llegar a los criterios siguientes.
 
 <Note>
-  Los desempates se aplican automáticamente a todos los Juegos sin importar el modo de puntuación. No hay nada que configurar — las reglas de abajo son las mismas para los Juegos Casual, Escalonado, Bracket en Cascada y Personalizado.
+  Los desempates se aplican automáticamente a todos los Juegos — no hay nada que los miembros deban configurar. La cascada funciona igual en los Juegos Casual, Escalonado y Bracket en Cascada. Los Juegos Personalizados son la única excepción, que se explica más abajo.
 </Note>
 
 ## Los cuatro niveles
@@ -17,17 +17,19 @@ Cuando dos o más participantes terminan un torneo con el mismo total de puntos,
   </Step>
 
   <Step title="Nivel 2 — Conteo de marcadores exactos">
-    Si sigue habiendo empate, el participante con el mayor número de marcadores exactos predichos (un marcador final correctamente predicho) queda más arriba. Esto premia la precisión a lo largo del torneo.
+    Si sigue habiendo empate, el participante que predijo más marcadores finales exactos queda más arriba. Un marcador exacto significa que acertaste los goles de ambos equipos. Esto premia la precisión a lo largo del torneo.
   </Step>
 
-  <Step title="Nivel 3 — Precisión en la diferencia de goles">
-    Si sigue habiendo empate, Toqui compara qué tan cerca estuvo la diferencia de goles predicha de cada participante respecto a la diferencia real en todos los partidos. Cuanto menor sea el error acumulado, más arriba queda.
+  <Step title="Nivel 3 — Resultados correctos">
+    Si sigue habiendo empate, el participante que predijo más resultados correctos — gana local, empate o gana visitante — queda más arriba, incluso cuando el marcador exacto fue incorrecto.
 
-    Por ejemplo, si el resultado real es 3–1 (diferencia de goles de 2) y predijiste 2–1 (diferencia de goles de 1), tu error para ese partido es 1. Estos errores se suman a lo largo de todos los partidos que predijiste.
+    Como acertar el marcador exacto también significa que acertaste el resultado, cada marcador exacto cuenta también aquí. Por eso el total de resultados correctos de un participante siempre es, como mínimo, igual a su total de marcadores exactos.
   </Step>
 
   <Step title="Nivel 4 — Tiempo promedio de predicción">
     Si sigue habiendo empate, el participante que envió sus predicciones más temprano en promedio queda más arriba. Esto premia a quienes se comprometen con sus predicciones con anticipación en lugar de esperar al último momento.
+
+    El momento que se registra es cuando enviaste cada predicción por **primera** vez — editarla después no lo reinicia. El promedio se calcula sobre los partidos que ya se puntuaron.
   </Step>
 </Steps>
 
@@ -37,13 +39,41 @@ Cuando dos o más participantes terminan un torneo con el mismo total de puntos,
 |---|---|---|
 | 1 | Total de puntos | Más puntos |
 | 2 | Conteo de marcadores exactos | Más marcadores exactos |
-| 3 | Precisión en la diferencia de goles | Menor error acumulado |
+| 3 | Resultados correctos | Más resultados correctos |
 | 4 | Tiempo promedio de predicción | Envíos más tempranos |
+
+## Lo que conviene saber
+
+- **Orden estricto.** Toqui solo mira un nivel inferior cuando los participantes están empatados en todos los niveles anteriores. La primera diferencia define el orden — un participante puede quedar más arriba por el Nivel 2 aunque esté por detrás en el Nivel 3 o 4.
+- **Los marcadores exactos también cuentan como resultados correctos.** Si aciertas el marcador exacto, también predijiste el resultado correcto, así que ese partido cuenta tanto para el Nivel 2 como para el Nivel 3.
+- **El tiempo de predicción es cuando enviaste por primera vez.** Editar una predicción más tarde nunca cambia el momento registrado, y solo los partidos ya puntuados entran en el promedio.
+- **Se calcula por Juego.** La tabla y los desempates se calculan de forma independiente para cada Juego en el que participas.
+- **Los Juegos Personalizados pueden saltarse un nivel.** Los Niveles 2 y 3 dependen de las reglas de marcador exacto y resultado correcto. Esas reglas siempre están activas en los Juegos Casual, Escalonado y Bracket en Cascada, pero en un Juego Personalizado donde un administrador desactivó una de ellas, Toqui simplemente se salta ese desempate y pasa al siguiente.
+
+## Ejemplo práctico
+
+Tres participantes empatan con **50 puntos**:
+
+| Participante | Marcadores exactos | Resultados correctos | Tiempo prom. de predicción |
+|---|---|---|---|
+| Ana | 5 | 9 | 10 jun |
+| Beto | 5 | 8 | 9 jun |
+| Carla | 5 | 8 | 12 jun |
+
+- **Ana vs. Beto** están empatados en puntos y marcadores exactos (5 cada uno), así que los **resultados correctos** lo deciden — los 9 de Ana superan los 8 de Beto, y Ana queda más arriba.
+- **Beto vs. Carla** están empatados en puntos, marcadores exactos *y* resultados correctos (8 cada uno), así que se define por el **tiempo promedio de predicción** — Beto envió antes, así que Beto queda más arriba.
+
+Orden final: **Ana → Beto → Carla.**
+
+## Dónde ver por qué estás empatado
+
+- **En la tabla**, aparece un separador de **"Empatados con N pts"** entre los participantes que tienen los mismos puntos. Tócalo para abrir una explicación que muestra el orden de desempate y exactamente qué dato los separó — por ejemplo, *"Estás detrás de Ana — más resultados correctos (9 vs. 8)."*
+- **En el perfil de un participante**, se muestran sus marcadores exactos, sus resultados correctos y su tiempo promedio de predicción.
 
 ## Empate total
 
-En el raro caso de que dos participantes empaten en los cuatro criterios, comparten la misma posición en la tabla.
+En el raro caso de que dos participantes sigan exactamente iguales tras los cuatro niveles, comparten la misma posición en la tabla. En la práctica esto casi nunca ocurre — el tiempo promedio de predicción es una marca de tiempo precisa, así que casi siempre los separa.
 
 <Tip>
-  Enviar tus predicciones temprano no solo es una ventaja para el desempate — también te protege de no perderte un cierre. Mira [Modos de puntuación](/es/guides/scoring-modes) para saber cómo y cuándo se cierran las predicciones en cada modo.
+  Enviar tus predicciones temprano no solo es una ventaja para el Nivel 4 — también te protege de no perderte un cierre. Mira [Modos de puntuación](/es/guides/scoring-modes) para saber cómo y cuándo se cierran las predicciones en cada modo.
 </Tip>
